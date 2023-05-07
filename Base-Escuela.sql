@@ -1,32 +1,40 @@
 sql
-CREATE TABLE ciclo (
-    id_ciclo INT PRIMARY KEY AUTO_INCREMENT,
-    nombre_ciclo VARCHAR(50),
-    id_escuela INT,
-    FOREIGN KEY (id_escuela) REFERENCES escuela(id_escuela)
+CREATE TABLE Ciclo (
+    Id_ciclo INT PRIMARY KEY AUTO_INCREMENT, 
+    Nombre_Ciclo VARCHAR(50),
+    Id_Escuela INT,
 );
 
-CREATE TABLE especialidad (
-    id_especialidad INT PRIMARY KEY AUTO_INCREMENT,
-    nombre_especialidad VARCHAR(50),
-    id_ciclo INT,
-    FOREIGN KEY (id_ciclo) REFERENCES ciclo(id_ciclo)
+CREATE TABLE Especialidad (
+    Id_Especialidad INT PRIMARY KEY AUTO_INCREMENT,
+    Nombre_Especialidad VARCHAR(50),
+    Id_Ciclo INT,
+    FOREIGN KEY (Id_Ciclo) REFERENCES Ciclo(Id_Ciclo)
 );
 
-CREATE TABLE curso (
-    id_curso INT PRIMARY KEY AUTO_INCREMENT,
-    nombre_curso VARCHAR(50),
-    id_especialidad INT,
-    FOREIGN KEY (id_especialidad) REFERENCES especialidad(id_especialidad)
+CREATE TABLE Curso (
+    Id_Curso INT PRIMARY KEY AUTO_INCREMENT,
+    Nombre_Curso VARCHAR(50),
+    Id_Especialidad INT,
+    FOREIGN KEY (Id_Especialidad) REFERENCES Especialidad(Id_Especialidad)
 );
 
-CREATE TABLE materia (
-    id_materia INT PRIMARY KEY AUTO_INCREMENT,
-    nombre_materia VARCHAR(50)
+CREATE TABLE Materia (
+    Id_Materia INT PRIMARY KEY AUTO_INCREMENT,
+    Nombre_Materia VARCHAR(50)
+);
+CREATE TABLE Barrio (
+    Id_Barrio INT PRIMARY KEY AUTO_INCREMENT,
+    Nombre_Barrio VARCHAR(50)
+);
+CREATE TABLE Genero (
+    Id_Genero INT PRIMARY KEY AUTO_INCREMENT,
 );
 
-CREATE TABLE alumno (
-    id_alumno INT PRIMARY KEY AUTO_INCREMENT,
-    nombre_alumno VARCHAR(50),
-    apellido_alumno VARCHAR(50),
-    fecha_nacimiento DATE
+CREATE TABLE Alumno (
+    Id_Alumno INT PRIMARY KEY AUTO_INCREMENT,
+    Nombre_Alumno VARCHAR(50),
+    Apellido_Alumno VARCHAR(50),
+    FecNac_Alumno DATE,
+    Barrio_Alumno INT,
+);
