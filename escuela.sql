@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 07-05-2023 a las 19:04:07
+-- Tiempo de generación: 07-05-2023 a las 19:17:23
 -- Versión del servidor: 10.4.27-MariaDB
 -- Versión de PHP: 8.2.0
 
@@ -91,6 +91,34 @@ CREATE TABLE `especialidad` (
 CREATE TABLE `materia` (
   `Id_Materia` int(11) NOT NULL,
   `Nombre_Materia` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `personal`
+--
+
+CREATE TABLE `personal` (
+  `Id_Personal` int(11) NOT NULL,
+  `Nombre_Personal` varchar(30) NOT NULL,
+  `Apellido_Personal` varchar(30) NOT NULL,
+  `Cuil_Personal` varchar(30) NOT NULL,
+  `FecNac_Personal` date NOT NULL,
+  `Telefono_personal` varchar(30) NOT NULL,
+  `Correo_Personal` varchar(30) NOT NULL,
+  `Genero_Personal` int(5) NOT NULL,
+  `Barrio_Persona` int(50) NOT NULL,
+  `Calle_Personal` varchar(30) NOT NULL,
+  `Ciudad_Personal` int(50) NOT NULL,
+  `CodPos_Personal` varchar(10) NOT NULL,
+  `Piso_Personal` varchar(10) NOT NULL,
+  `Dpto_Personal` varchar(11) NOT NULL,
+  `Cargo_Personal` int(11) NOT NULL,
+  `Curso_Personal` int(11) NOT NULL,
+  `Turno_Personal` int(10) NOT NULL,
+  `Altura_Personal` varchar(10) NOT NULL,
+  `Manzana_Personal` varchar(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish_ci;
 
 --
