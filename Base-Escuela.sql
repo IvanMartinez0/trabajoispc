@@ -1,4 +1,4 @@
-sql
+
 CREATE TABLE Ciclo (
     Id_ciclo INT PRIMARY KEY AUTO_INCREMENT, 
     Nombre_Ciclo VARCHAR(50),
@@ -38,5 +38,5 @@ CREATE TABLE Alumno (
     Apellido_Alumno VARCHAR(50),
     FecNac_Alumno DATE,
     Barrio_Alumno INT,
-    
+
 );
