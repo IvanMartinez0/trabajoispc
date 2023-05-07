@@ -1,11 +1,5 @@
 
-CREATE TABLE `Ciclo` (--olvidaste colocar los `` para las tablas
-    Id_ciclo INT PRIMARY KEY AUTO_INCREMENT, 
-    --Te olvidaste de borrar el id escuela, no hay tabla escuela
-    Nombre_Ciclo VARCHAR(50),
-)
-ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish_ci; --Olvidaste poner en español esta tabla
-
+--elimine la tabla Ciclo, no se estaba usando
 CREATE TABLE `Especialidad` (-- ``
     `Id_Especialidad` INT PRIMARY KEY AUTO_INCREMENT,
     `Nombre_Especialidad` VARCHAR(50),
