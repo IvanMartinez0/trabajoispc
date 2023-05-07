@@ -21,14 +21,15 @@ CREATE TABLE Curso (
 
 CREATE TABLE Materia (
     Id_Materia INT PRIMARY KEY AUTO_INCREMENT,
-    Nombre_Materia VARCHAR(50)
+    Nombre_Materia VARCHAR(50),
 );
 CREATE TABLE Barrio (
     Id_Barrio INT PRIMARY KEY AUTO_INCREMENT,
-    Nombre_Barrio VARCHAR(50)
+    Nombre_Barrio VARCHAR(50),
 );
 CREATE TABLE Genero (
     Id_Genero INT PRIMARY KEY AUTO_INCREMENT,
+    Nombre_Genero VARCHAR(50),
 );
 
 CREATE TABLE Alumno (
@@ -37,4 +38,5 @@ CREATE TABLE Alumno (
     Apellido_Alumno VARCHAR(50),
     FecNac_Alumno DATE,
     Barrio_Alumno INT,
+    
 );
