@@ -1,9 +1,4 @@
 sql
-CREATE TABLE escuela (
-    id_escuela INT PRIMARY KEY AUTO_INCREMENT,
-    nombre_escuela VARCHAR(50)
-);
-
 CREATE TABLE ciclo (
     id_ciclo INT PRIMARY KEY AUTO_INCREMENT,
     nombre_ciclo VARCHAR(50),
