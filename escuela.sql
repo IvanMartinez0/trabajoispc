@@ -1,6 +1,7 @@
 -- Estructura de tabla para la tabla `alumno`
 --
-CREATE TABLE `alumno` (
+CREATE TABLE `alumno` (nj
+                 
   `Id_Alumno` int(11) PRIMARY KEY AUTO_INCREMENT NOT NULL,
   `Nombre_Alumno` varchar(50) NOT NULL,
   `Apellido_Alumno` varchar(50) NOT NULL,
