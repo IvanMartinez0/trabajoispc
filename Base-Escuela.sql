@@ -10,7 +10,6 @@ CREATE TABLE `Especialidad` (-- ``
     `Id_Especialidad` INT PRIMARY KEY AUTO_INCREMENT,
     `Nombre_Especialidad` VARCHAR(50),
     --olvidaste borrar otro id
-    FOREIGN KEY (Id_Ciclo) REFERENCES Ciclo(Id_Ciclo), --esto borralo, abajo hiciste lo mismo
 )
 ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish_ci;--esta tambien
 ;
@@ -18,7 +17,7 @@ ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish_ci;--esta tambien
 CREATE TABLE `Curso` ( --``
     `Id_Curso` INT PRIMARY KEY AUTO_INCREMENT,
     `Nombre_Curso` VARCHAR(50),
-    FOREIGN KEY (Id_Especialidad) REFERENCES Especialidad(Id_Especialidad),-- borralo
+    
 )
 ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish_ci;-- y esta
 
