@@ -40,3 +40,8 @@ CREATE TABLE Alumno (
     Barrio_Alumno INT,
 
 );
+CREATE TABLE `genero` (
+  `Id_Genero` int(11) PRIMARY KEY AUTO_INCREMENT NOT NULL,
+  `Nombre_Genero` varchar(10) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish_ci;
+
