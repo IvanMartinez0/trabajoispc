@@ -9,14 +9,14 @@ CREATE TABLE Especialidad (
     Id_Especialidad INT PRIMARY KEY AUTO_INCREMENT,
     Nombre_Especialidad VARCHAR(50),
     Id_Ciclo INT,
-    FOREIGN KEY (Id_Ciclo) REFERENCES Ciclo(Id_Ciclo)
+    FOREIGN KEY (Id_Ciclo) REFERENCES Ciclo(Id_Ciclo),
 );
 
 CREATE TABLE Curso (
     Id_Curso INT PRIMARY KEY AUTO_INCREMENT,
     Nombre_Curso VARCHAR(50),
     Id_Especialidad INT,
-    FOREIGN KEY (Id_Especialidad) REFERENCES Especialidad(Id_Especialidad)
+    FOREIGN KEY (Id_Especialidad) REFERENCES Especialidad(Id_Especialidad),
 );
 
 CREATE TABLE Materia (
