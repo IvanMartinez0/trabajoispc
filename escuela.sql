@@ -1,34 +1,8 @@
--- phpMyAdmin SQL Dump
--- version 5.2.0
--- https://www.phpmyadmin.net/
---
--- Servidor: 127.0.0.1
--- Tiempo de generación: 07-05-2023 a las 20:37:28
--- Versión del servidor: 10.4.27-MariaDB
--- Versión de PHP: 8.2.0
-
-SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-START TRANSACTION;
-SET time_zone = "+00:00";
-
-
-/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
-/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
-/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8mb4 */;
-
---
--- Base de datos: `escuela`
---
-
--- --------------------------------------------------------
-
---
 -- Estructura de tabla para la tabla `alumno`
 --
 
 CREATE TABLE `alumno` (
-  `Id_Alumno` int(11) NOT NULL,
+  `Id_Alumno` int(11) PRIMARY KEY AUTO_INCREMENT NOT NULL,
   `Nombre_Alumno` varchar(50) NOT NULL,
   `Apellido_Alumno` varchar(50) NOT NULL,
   `Cuil_Alumno` varchar(50) NOT NULL,
@@ -49,14 +23,12 @@ CREATE TABLE `alumno` (
   `Esp_Alumno` int(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish_ci;
 
--- --------------------------------------------------------
-
 --
 -- Estructura de tabla para la tabla `barrio`
 --
 
 CREATE TABLE `barrio` (
-  `Id_Barrio` int(11) NOT NULL,
+  `Id_Barrio` int(11) PRIMARY KEY AUTO_INCREMENT NOT NULL,
   `Nombre_Barrio` varchar(25) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish_ci;
 
@@ -67,7 +39,7 @@ CREATE TABLE `barrio` (
 --
 
 CREATE TABLE `cargo` (
-  `Id_Cargo` int(11) NOT NULL,
+  `Id_Cargo` int(11) PRIMARY KEY AUTO_INCREMENT NOT NULL,
   `Nombre_Cargo` varchar(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish_ci;
 
@@ -78,7 +50,7 @@ CREATE TABLE `cargo` (
 --
 
 CREATE TABLE `ciudad` (
-  `Id_Ciudad` int(11) NOT NULL,
+  `Id_Ciudad` int(11) PRIMARY KEY AUTO_INCREMENT NOT NULL,
   `Nombre_Ciudad` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish_ci;
 
@@ -89,7 +61,7 @@ CREATE TABLE `ciudad` (
 --
 
 CREATE TABLE `cursos` (
-  `Id_Curso` int(11) NOT NULL,
+  `Id_Curso` int(11) PRIMARY KEY AUTO_INCREMENT NOT NULL,
   `Nombre_Curso` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish_ci;
 
@@ -100,7 +72,7 @@ CREATE TABLE `cursos` (
 --
 
 CREATE TABLE `especialidad` (
-  `Id_Especialidad` int(11) NOT NULL,
+  `Id_Especialidad` int(11) PRIMARY KEY AUTO_INCREMENT NOT NULL,
   `Nombre_Especialidad` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish_ci;
 
@@ -111,7 +83,7 @@ CREATE TABLE `especialidad` (
 --
 
 CREATE TABLE `genero` (
-  `Id_Genero` int(11) NOT NULL,
+  `Id_Genero` int(11) PRIMARY KEY AUTO_INCREMENT NOT NULL,
   `Nombre_Genero` varchar(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish_ci;
 
@@ -122,7 +94,7 @@ CREATE TABLE `genero` (
 --
 
 CREATE TABLE `materia` (
-  `Id_Materia` int(11) NOT NULL,
+  `Id_Materia` int(11) PRIMARY KEY AUTO_INCREMENT NOT NULL,
   `Nombre_Materia` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish_ci;
 
@@ -133,7 +105,7 @@ CREATE TABLE `materia` (
 --
 
 CREATE TABLE `personal` (
-  `Id_Personal` int(11) NOT NULL,
+  `Id_Personal` int(11) PRIMARY KEY AUTO_INCREMENT NOT NULL,
   `Nombre_Personal` varchar(30) NOT NULL,
   `Apellido_Personal` varchar(30) NOT NULL,
   `Cuil_Personal` varchar(30) NOT NULL,
@@ -161,19 +133,14 @@ CREATE TABLE `personal` (
 --
 
 CREATE TABLE `turno` (
-  `Id_Turno` int(11) NOT NULL,
+  `Id_Turno` int(11) PRIMARY KEY AUTO_INCREMENT NOT NULL,
   `Nombre_Turno` varchar(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish_ci;
-
---
--- Índices para tablas volcadas
---
 
 --
 -- Indices de la tabla `alumno`
 --
 ALTER TABLE `alumno`
-  ADD PRIMARY KEY (`Id_Alumno`),
   ADD KEY `Curso_Alumno` (`Curso_Alumno`),
   ADD KEY `Genero_Alumno` (`Genero_Alumno`),
   ADD KEY `Turno_Alumno` (`Turno_Alumno`),
@@ -181,155 +148,39 @@ ALTER TABLE `alumno`
   ADD KEY `Ciudad_Alumno` (`Ciudad_Alumno`),
   ADD KEY `Esp_Alumno` (`Esp_Alumno`);
 
---
--- Indices de la tabla `barrio`
---
-ALTER TABLE `barrio`
-  ADD PRIMARY KEY (`Id_Barrio`);
-
---
--- Indices de la tabla `cargo`
---
-ALTER TABLE `cargo`
-  ADD PRIMARY KEY (`Id_Cargo`);
-
---
--- Indices de la tabla `ciudad`
---
-ALTER TABLE `ciudad`
-  ADD PRIMARY KEY (`Id_Ciudad`);
-
---
--- Indices de la tabla `cursos`
---
-ALTER TABLE `cursos`
-  ADD PRIMARY KEY (`Id_Curso`);
-
---
--- Indices de la tabla `especialidad`
---
-ALTER TABLE `especialidad`
-  ADD PRIMARY KEY (`Id_Especialidad`);
-
---
--- Indices de la tabla `genero`
---
-ALTER TABLE `genero`
-  ADD PRIMARY KEY (`Id_Genero`);
-
---
--- Indices de la tabla `materia`
---
-ALTER TABLE `materia`
-  ADD PRIMARY KEY (`Id_Materia`);
 
 --
 -- Indices de la tabla `personal`
 --
 ALTER TABLE `personal`
-  ADD PRIMARY KEY (`Id_Personal`),
   ADD KEY `Genero_Personal` (`Genero_Personal`),
   ADD KEY `Barrio_Persona` (`Barrio_Personal`),
   ADD KEY `Barrio_Personal` (`Barrio_Personal`),
   ADD KEY `Ciudad_Personal` (`Ciudad_Personal`),
   ADD KEY `Cargo_Personal` (`Cargo_Personal`),
   ADD KEY `Curso_Personal` (`Curso_Personal`),
-  ADD KEY `Turno_Personal` (`Turno_Personal`);
+  ADD KEY `Turno_Personal` (`Turno_Personal`),
 
---
--- Indices de la tabla `turno`
---
-ALTER TABLE `turno`
-  ADD PRIMARY KEY (`Id_Turno`);
 
---
--- AUTO_INCREMENT de las tablas volcadas
---
 
---
--- AUTO_INCREMENT de la tabla `alumno`
---
+-- Relaciones de la tabla `alumno`
+
 ALTER TABLE `alumno`
-  MODIFY `Id_Alumno` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT de la tabla `barrio`
---
-ALTER TABLE `barrio`
-  MODIFY `Id_Barrio` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT de la tabla `cargo`
---
-ALTER TABLE `cargo`
-  MODIFY `Id_Cargo` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT de la tabla `ciudad`
---
-ALTER TABLE `ciudad`
-  MODIFY `Id_Ciudad` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT de la tabla `cursos`
---
-ALTER TABLE `cursos`
-  MODIFY `Id_Curso` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT de la tabla `especialidad`
---
-ALTER TABLE `especialidad`
-  MODIFY `Id_Especialidad` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT de la tabla `genero`
---
-ALTER TABLE `genero`
-  MODIFY `Id_Genero` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT de la tabla `materia`
---
-ALTER TABLE `materia`
-  MODIFY `Id_Materia` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT de la tabla `personal`
---
-ALTER TABLE `personal`
-  MODIFY `Id_Personal` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT de la tabla `turno`
---
-ALTER TABLE `turno`
-  MODIFY `Id_Turno` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- Restricciones para tablas volcadas
---
-
---
--- Filtros para la tabla `alumno`
---
-ALTER TABLE `alumno`
-  ADD CONSTRAINT `alumno_ibfk_1` FOREIGN KEY (`Turno_Alumno`) REFERENCES `turno` (`Id_Turno`) ON UPDATE CASCADE,
-  ADD CONSTRAINT `alumno_ibfk_2` FOREIGN KEY (`Curso_Alumno`) REFERENCES `cursos` (`Id_Curso`) ON DELETE NO ACTION ON UPDATE CASCADE,
+  ADD CONSTRAINT `alumno_ibfk_1` FOREIGN KEY (`Turno_Alumno`) REFERENCES `turno` (`Id_Turno`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT `alumno_ibfk_2` FOREIGN KEY (`Curso_Alumno`) REFERENCES `cursos` (`Id_Curso`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   ADD CONSTRAINT `alumno_ibfk_3` FOREIGN KEY (`Genero_Alumno`) REFERENCES `genero` (`Id_Genero`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   ADD CONSTRAINT `alumno_ibfk_4` FOREIGN KEY (`Barrio_Alumno`) REFERENCES `barrio` (`Id_Barrio`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   ADD CONSTRAINT `alumno_ibfk_5` FOREIGN KEY (`Ciudad_Alumno`) REFERENCES `ciudad` (`Id_Ciudad`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   ADD CONSTRAINT `alumno_ibfk_6` FOREIGN KEY (`Esp_Alumno`) REFERENCES `especialidad` (`Id_Especialidad`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
---
--- Filtros para la tabla `genero`
---
+
+ --Filtros para la tabla genero
+
 ALTER TABLE `genero`
   ADD CONSTRAINT `genero_ibfk_1` FOREIGN KEY (`Id_Genero`) REFERENCES `personal` (`Genero_Personal`) ON DELETE NO ACTION ON UPDATE CASCADE;
 
---
--- Filtros para la tabla `personal`
---
+
+--Filtros para la tabla personal
 ALTER TABLE `personal`
   ADD CONSTRAINT `personal_ibfk_1` FOREIGN KEY (`Cargo_Personal`) REFERENCES `cargo` (`Id_Cargo`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   ADD CONSTRAINT `personal_ibfk_2` FOREIGN KEY (`Turno_Personal`) REFERENCES `turno` (`Id_Turno`) ON DELETE NO ACTION ON UPDATE NO ACTION,
@@ -338,6 +189,3 @@ ALTER TABLE `personal`
   ADD CONSTRAINT `personal_ibfk_5` FOREIGN KEY (`Curso_Personal`) REFERENCES `cursos` (`Id_Curso`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 COMMIT;
 
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
-/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
