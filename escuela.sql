@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 07-05-2023 a las 19:17:23
+-- Tiempo de generación: 07-05-2023 a las 20:09:04
 -- Versión del servidor: 10.4.27-MariaDB
 -- Versión de PHP: 8.2.0
 
@@ -63,6 +63,28 @@ CREATE TABLE `barrio` (
 -- --------------------------------------------------------
 
 --
+-- Estructura de tabla para la tabla `cargo`
+--
+
+CREATE TABLE `cargo` (
+  `Id_Cargo` int(11) NOT NULL,
+  `Nombre_Cargo` varchar(20) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `ciudad`
+--
+
+CREATE TABLE `ciudad` (
+  `Id_Ciudad` int(11) NOT NULL,
+  `Nombre_Ciudad` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish_ci;
+
+-- --------------------------------------------------------
+
+--
 -- Estructura de tabla para la tabla `cursos`
 --
 
@@ -80,6 +102,17 @@ CREATE TABLE `cursos` (
 CREATE TABLE `especialidad` (
   `Id_Especialidad` int(11) NOT NULL,
   `Nombre_Especialidad` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `genero`
+--
+
+CREATE TABLE `genero` (
+  `Id_Genero` int(11) NOT NULL,
+  `Nombre_Genero` varchar(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish_ci;
 
 -- --------------------------------------------------------
@@ -121,15 +154,44 @@ CREATE TABLE `personal` (
   `Manzana_Personal` varchar(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish_ci;
 
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `turno`
+--
+
+CREATE TABLE `turno` (
+  `Id_Turno` int(11) NOT NULL,
+  `Nombre_Turno` varchar(10) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish_ci;
+
 --
 -- Índices para tablas volcadas
 --
+
+--
+-- Indices de la tabla `alumno`
+--
+ALTER TABLE `alumno`
+  ADD PRIMARY KEY (`Id_Alumno`);
 
 --
 -- Indices de la tabla `barrio`
 --
 ALTER TABLE `barrio`
   ADD PRIMARY KEY (`Id_Barrio`);
+
+--
+-- Indices de la tabla `cargo`
+--
+ALTER TABLE `cargo`
+  ADD PRIMARY KEY (`Id_Cargo`);
+
+--
+-- Indices de la tabla `ciudad`
+--
+ALTER TABLE `ciudad`
+  ADD PRIMARY KEY (`Id_Ciudad`);
 
 --
 -- Indices de la tabla `cursos`
@@ -144,20 +206,56 @@ ALTER TABLE `especialidad`
   ADD PRIMARY KEY (`Id_Especialidad`);
 
 --
+-- Indices de la tabla `genero`
+--
+ALTER TABLE `genero`
+  ADD PRIMARY KEY (`Id_Genero`);
+
+--
 -- Indices de la tabla `materia`
 --
 ALTER TABLE `materia`
   ADD PRIMARY KEY (`Id_Materia`);
 
 --
+-- Indices de la tabla `personal`
+--
+ALTER TABLE `personal`
+  ADD PRIMARY KEY (`Id_Personal`);
+
+--
+-- Indices de la tabla `turno`
+--
+ALTER TABLE `turno`
+  ADD PRIMARY KEY (`Id_Turno`);
+
+--
 -- AUTO_INCREMENT de las tablas volcadas
 --
+
+--
+-- AUTO_INCREMENT de la tabla `alumno`
+--
+ALTER TABLE `alumno`
+  MODIFY `Id_Alumno` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de la tabla `barrio`
 --
 ALTER TABLE `barrio`
   MODIFY `Id_Barrio` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT de la tabla `cargo`
+--
+ALTER TABLE `cargo`
+  MODIFY `Id_Cargo` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT de la tabla `ciudad`
+--
+ALTER TABLE `ciudad`
+  MODIFY `Id_Ciudad` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de la tabla `cursos`
@@ -172,10 +270,28 @@ ALTER TABLE `especialidad`
   MODIFY `Id_Especialidad` int(11) NOT NULL AUTO_INCREMENT;
 
 --
+-- AUTO_INCREMENT de la tabla `genero`
+--
+ALTER TABLE `genero`
+  MODIFY `Id_Genero` int(11) NOT NULL AUTO_INCREMENT;
+
+--
 -- AUTO_INCREMENT de la tabla `materia`
 --
 ALTER TABLE `materia`
   MODIFY `Id_Materia` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT de la tabla `personal`
+--
+ALTER TABLE `personal`
+  MODIFY `Id_Personal` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT de la tabla `turno`
+--
+ALTER TABLE `turno`
+  MODIFY `Id_Turno` int(11) NOT NULL AUTO_INCREMENT;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
