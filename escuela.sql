@@ -21,7 +21,7 @@ CREATE TABLE `alumno` (
   `Piso_Alumno` varchar(10) NOT NULL,
   `CodPos_Alumno` varchar(10) NOT NULL,
   `Esp_Alumno` int(10) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish_ci; --Este comando sirve para definir que la tabla esta en español y por ende es compatible con caracteres especiales (Ñ)
 
 --
 -- Estructura de tabla para la tabla `barrio`
