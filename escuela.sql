@@ -1,6 +1,5 @@
 -- Estructura de tabla para la tabla `alumno`
 --
-
 CREATE TABLE `alumno` (
   `Id_Alumno` int(11) PRIMARY KEY AUTO_INCREMENT NOT NULL,
   `Nombre_Alumno` varchar(50) NOT NULL,
@@ -44,19 +43,14 @@ CREATE TABLE `cargo` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish_ci;
 
 -- --------------------------------------------------------
-
 --
 -- Estructura de tabla para la tabla `ciudad`
 --
-
 CREATE TABLE `ciudad` (
   `Id_Ciudad` int(11) PRIMARY KEY AUTO_INCREMENT NOT NULL,
   `Nombre_Ciudad` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish_ci;
-
 -- --------------------------------------------------------
-
---
 -- Estructura de tabla para la tabla `cursos`
 --
 
@@ -173,19 +167,12 @@ ALTER TABLE `alumno`
   ADD CONSTRAINT `alumno_ibfk_5` FOREIGN KEY (`Ciudad_Alumno`) REFERENCES `ciudad` (`Id_Ciudad`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   ADD CONSTRAINT `alumno_ibfk_6` FOREIGN KEY (`Esp_Alumno`) REFERENCES `especialidad` (`Id_Especialidad`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
-
- --Filtros para la tabla genero
-
-ALTER TABLE `genero`
-  ADD CONSTRAINT `genero_ibfk_1` FOREIGN KEY (`Id_Genero`) REFERENCES `personal` (`Genero_Personal`) ON DELETE NO ACTION ON UPDATE CASCADE;
-
-
---Filtros para la tabla personal
+--Relaciones de la tabla personal
 ALTER TABLE `personal`
   ADD CONSTRAINT `personal_ibfk_1` FOREIGN KEY (`Cargo_Personal`) REFERENCES `cargo` (`Id_Cargo`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   ADD CONSTRAINT `personal_ibfk_2` FOREIGN KEY (`Turno_Personal`) REFERENCES `turno` (`Id_Turno`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   ADD CONSTRAINT `personal_ibfk_3` FOREIGN KEY (`Barrio_Personal`) REFERENCES `barrio` (`Id_Barrio`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   ADD CONSTRAINT `personal_ibfk_4` FOREIGN KEY (`Ciudad_Personal`) REFERENCES `ciudad` (`Id_Ciudad`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   ADD CONSTRAINT `personal_ibfk_5` FOREIGN KEY (`Curso_Personal`) REFERENCES `cursos` (`Id_Curso`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+  ADD CONSTRAINT `personal_ibfk_6` FOREIGN KEY (`Genero_Personal`) REFERENCES `genero` (`Id_Genero`) ON DELETE NO ACTION ON UPDATE NO ACTION,
 COMMIT;
-
