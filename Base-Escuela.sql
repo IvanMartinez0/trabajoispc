@@ -1,37 +1,47 @@
 
-CREATE TABLE 'Ciclo' (--olvidaste colocar los '' para las tablas
+CREATE TABLE `Ciclo` (--olvidaste colocar los `` para las tablas
     Id_ciclo INT PRIMARY KEY AUTO_INCREMENT, 
     --Te olvidaste de borrar el id escuela, no hay tabla escuela
     Nombre_Ciclo VARCHAR(50),
-);
+)
+ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish_ci; --Olvidaste poner en español esta tabla
 
-CREATE TABLE 'Especialidad' (-- ''
-    Id_Especialidad INT PRIMARY KEY AUTO_INCREMENT,
-    Nombre_Especialidad VARCHAR(50),
+CREATE TABLE `Especialidad` (-- ``
+    `Id_Especialidad` INT PRIMARY KEY AUTO_INCREMENT,
+    `Nombre_Especialidad` VARCHAR(50),
     --olvidaste borrar otro id
-    FOREIGN KEY (Id_Ciclo) REFERENCES Ciclo(Id_Ciclo),
-);
+    FOREIGN KEY (Id_Ciclo) REFERENCES Ciclo(Id_Ciclo), --esto borralo, abajo hiciste lo mismo
+)
+ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish_ci;--esta tambien
+;
 
-CREATE TABLE 'Curso' ( --''
-    Id_Curso INT PRIMARY KEY AUTO_INCREMENT,
-    Nombre_Curso VARCHAR(50),
-    FOREIGN KEY (Id_Especialidad) REFERENCES Especialidad(Id_Especialidad),
-);
+CREATE TABLE `Curso` ( --``
+    `Id_Curso` INT PRIMARY KEY AUTO_INCREMENT,
+    `Nombre_Curso` VARCHAR(50),
+    FOREIGN KEY (Id_Especialidad) REFERENCES Especialidad(Id_Especialidad),-- borralo
+)
+ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish_ci;-- y esta
 
-CREATE TABLE 'Materia' (--''
-    Id_Materia INT PRIMARY KEY AUTO_INCREMENT,
-    Nombre_Materia VARCHAR(50),
-);
-CREATE TABLE 'Barrio' ( --''
-    Id_Barrio INT PRIMARY KEY AUTO_INCREMENT,
-    Nombre_Barrio VARCHAR(50),
-);
-CREATE TABLE 'Genero' ( --''
-    Id_Genero INT PRIMARY KEY AUTO_INCREMENT,
-    Nombre_Genero VARCHAR(50),
-);
+CREATE TABLE `Materia` (--``
+    `Id_Materia` INT PRIMARY KEY AUTO_INCREMENT,
+    `Nombre_Materia` VARCHAR(50),
+)
+ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish_ci;--esta
 
-CREATE TABLE 'Alumno' (--''
+CREATE TABLE `Barrio` ( --``
+    `Id_Barrio` INT PRIMARY KEY AUTO_INCREMENT,
+    `Nombre_Barrio` VARCHAR(50),
+)
+ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish_ci;--tambien esta
+
+CREATE TABLE `Genero` ( --``
+    `Id_Genero` INT PRIMARY KEY AUTO_INCREMENT,
+    `Nombre_Genero` VARCHAR(50),
+    ) 
+   ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish_ci;-- y esta
+;
+
+CREATE TABLE `Alumno` (
     `Id_Alumno` int(11) PRIMARY KEY AUTO_INCREMENT NOT NULL,
   `Nombre_Alumno` varchar(50) NOT NULL,
   `Apellido_Alumno` varchar(50) NOT NULL,
@@ -51,26 +61,26 @@ CREATE TABLE 'Alumno' (--''
   `Piso_Alumno` varchar(10) NOT NULL,
   `CodPos_Alumno` varchar(10) NOT NULL,
   `Esp_Alumno` int(10) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish_ci;-- esta ya no
 
 );
 
-CREATE TABLE 'turno' (
+CREATE TABLE `turno` (
   `Id_Turno` int(11) PRIMARY KEY AUTO_INCREMENT NOT NULL,
   `Nombre_Turno` varchar(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish_ci;
 
-CREATE TABLE 'ciudad' (
+CREATE TABLE `ciudad` (
   `Id_Ciudad` int(11) PRIMARY KEY AUTO_INCREMENT NOT NULL,
   `Nombre_Ciudad` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish_ci;
 
-CREATE TABLE 'cursos' (
+CREATE TABLE `cursos` (
   `Id_Curso` int(11) PRIMARY KEY AUTO_INCREMENT NOT NULL,
   `Nombre_Curso` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish_ci;
 
-CREATE TABLE 'personal' (
+CREATE TABLE `personal` (
   `Id_Personal` int(11) PRIMARY KEY AUTO_INCREMENT NOT NULL,
   `Nombre_Personal` varchar(30) NOT NULL,
   `Apellido_Personal` varchar(30) NOT NULL,
@@ -93,18 +103,18 @@ CREATE TABLE 'personal' (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish_ci;
 
 
-CREATE TABLE 'cargo' (
+CREATE TABLE `cargo` (
   `Id_Cargo` int(11) PRIMARY KEY AUTO_INCREMENT NOT NULL,
   `Nombre_Cargo` varchar(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish_ci;
 
 
-CREATE TABLE 'especialidad' (
+CREATE TABLE `especialidad` (
   `Id_Especialidad` int(11) PRIMARY KEY AUTO_INCREMENT NOT NULL,
   `Nombre_Especialidad` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish_ci;
 -- no borraste los guiones xD
-ALTER TABLE 'alumno'
+ALTER TABLE `alumno`
   ADD KEY `Curso_Alumno` (`Curso_Alumno`),
   ADD KEY `Genero_Alumno` (`Genero_Alumno`),
   ADD KEY `Turno_Alumno` (`Turno_Alumno`),
@@ -113,7 +123,7 @@ ALTER TABLE 'alumno'
   ADD KEY `Esp_Alumno` (`Esp_Alumno`);
   
   
-  ALTER TABLE 'personal'
+  ALTER TABLE `personal`
   ADD KEY `Genero_Personal` (`Genero_Personal`),
   ADD KEY `Barrio_Persona` (`Barrio_Personal`),
   ADD KEY `Barrio_Personal` (`Barrio_Personal`),
@@ -125,14 +135,15 @@ ALTER TABLE 'alumno'
  
  --RELACIONES
  --Olvidaste usar los dos guines
-ALTER TABLE 'alumno'
+ALTER TABLE `alumno`
   ADD CONSTRAINT `alumno_ibfk_1` FOREIGN KEY (`Turno_Alumno`) REFERENCES `turno` (`Id_Turno`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   ADD CONSTRAINT `alumno_ibfk_2` FOREIGN KEY (`Curso_Alumno`) REFERENCES `cursos` (`Id_Curso`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   ADD CONSTRAINT `alumno_ibfk_3` FOREIGN KEY (`Genero_Alumno`) REFERENCES `genero` (`Id_Genero`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   ADD CONSTRAINT `alumno_ibfk_4` FOREIGN KEY (`Barrio_Alumno`) REFERENCES `barrio` (`Id_Barrio`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   ADD CONSTRAINT `alumno_ibfk_5` FOREIGN KEY (`Ciudad_Alumno`) REFERENCES `ciudad` (`Id_Ciudad`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  
-  ALTER TABLE 'personal'
+  ADD CONSTRAINT `alumno_ibfk_6` FOREIGN KEY (`Esp_Alumno`) REFERENCES `especialidad` (`Id_Especialidad`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+   
+  ALTER TABLE `personal`
   ADD CONSTRAINT `personal_ibfk_1` FOREIGN KEY (`Cargo_Personal`) REFERENCES `cargo` (`Id_Cargo`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   ADD CONSTRAINT `personal_ibfk_2` FOREIGN KEY (`Turno_Personal`) REFERENCES `turno` (`Id_Turno`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   ADD CONSTRAINT `personal_ibfk_3` FOREIGN KEY (`Barrio_Personal`) REFERENCES `barrio` (`Id_Barrio`) ON DELETE NO ACTION ON UPDATE NO ACTION,
@@ -140,4 +151,3 @@ ALTER TABLE 'alumno'
   ADD CONSTRAINT `personal_ibfk_5` FOREIGN KEY (`Curso_Personal`) REFERENCES `cursos` (`Id_Curso`) ON DELETE NO ACTION ON UPDATE NO ACTION;
   ADD CONSTRAINT `personal_ibfk_6` FOREIGN KEY (`Genero_Personal`) REFERENCES `genero` (`Id_Genero`) ON DELETE NO ACTION ON UPDATE NO ACTION,
 COMMIT;
-  ADD CONSTRAINT `alumno_ibfk_6` FOREIGN KEY (`Esp_Alumno`) REFERENCES `especialidad` (`Id_Especialidad`) ON DELETE NO ACTION ON UPDATE NO ACTION;
