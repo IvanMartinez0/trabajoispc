@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 07-05-2023 a las 20:09:04
+-- Tiempo de generación: 07-05-2023 a las 20:37:28
 -- Versión del servidor: 10.4.27-MariaDB
 -- Versión de PHP: 8.2.0
 
@@ -141,7 +141,7 @@ CREATE TABLE `personal` (
   `Telefono_personal` varchar(30) NOT NULL,
   `Correo_Personal` varchar(30) NOT NULL,
   `Genero_Personal` int(5) NOT NULL,
-  `Barrio_Persona` int(50) NOT NULL,
+  `Barrio_Personal` int(50) NOT NULL,
   `Calle_Personal` varchar(30) NOT NULL,
   `Ciudad_Personal` int(50) NOT NULL,
   `CodPos_Personal` varchar(10) NOT NULL,
@@ -173,7 +173,13 @@ CREATE TABLE `turno` (
 -- Indices de la tabla `alumno`
 --
 ALTER TABLE `alumno`
-  ADD PRIMARY KEY (`Id_Alumno`);
+  ADD PRIMARY KEY (`Id_Alumno`),
+  ADD KEY `Curso_Alumno` (`Curso_Alumno`),
+  ADD KEY `Genero_Alumno` (`Genero_Alumno`),
+  ADD KEY `Turno_Alumno` (`Turno_Alumno`),
+  ADD KEY `Barrio_Alumno` (`Barrio_Alumno`),
+  ADD KEY `Ciudad_Alumno` (`Ciudad_Alumno`),
+  ADD KEY `Esp_Alumno` (`Esp_Alumno`);
 
 --
 -- Indices de la tabla `barrio`
@@ -221,7 +227,14 @@ ALTER TABLE `materia`
 -- Indices de la tabla `personal`
 --
 ALTER TABLE `personal`
-  ADD PRIMARY KEY (`Id_Personal`);
+  ADD PRIMARY KEY (`Id_Personal`),
+  ADD KEY `Genero_Personal` (`Genero_Personal`),
+  ADD KEY `Barrio_Persona` (`Barrio_Personal`),
+  ADD KEY `Barrio_Personal` (`Barrio_Personal`),
+  ADD KEY `Ciudad_Personal` (`Ciudad_Personal`),
+  ADD KEY `Cargo_Personal` (`Cargo_Personal`),
+  ADD KEY `Curso_Personal` (`Curso_Personal`),
+  ADD KEY `Turno_Personal` (`Turno_Personal`);
 
 --
 -- Indices de la tabla `turno`
@@ -292,6 +305,37 @@ ALTER TABLE `personal`
 --
 ALTER TABLE `turno`
   MODIFY `Id_Turno` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- Restricciones para tablas volcadas
+--
+
+--
+-- Filtros para la tabla `alumno`
+--
+ALTER TABLE `alumno`
+  ADD CONSTRAINT `alumno_ibfk_1` FOREIGN KEY (`Turno_Alumno`) REFERENCES `turno` (`Id_Turno`) ON UPDATE CASCADE,
+  ADD CONSTRAINT `alumno_ibfk_2` FOREIGN KEY (`Curso_Alumno`) REFERENCES `cursos` (`Id_Curso`) ON DELETE NO ACTION ON UPDATE CASCADE,
+  ADD CONSTRAINT `alumno_ibfk_3` FOREIGN KEY (`Genero_Alumno`) REFERENCES `genero` (`Id_Genero`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT `alumno_ibfk_4` FOREIGN KEY (`Barrio_Alumno`) REFERENCES `barrio` (`Id_Barrio`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT `alumno_ibfk_5` FOREIGN KEY (`Ciudad_Alumno`) REFERENCES `ciudad` (`Id_Ciudad`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT `alumno_ibfk_6` FOREIGN KEY (`Esp_Alumno`) REFERENCES `especialidad` (`Id_Especialidad`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+
+--
+-- Filtros para la tabla `genero`
+--
+ALTER TABLE `genero`
+  ADD CONSTRAINT `genero_ibfk_1` FOREIGN KEY (`Id_Genero`) REFERENCES `personal` (`Genero_Personal`) ON DELETE NO ACTION ON UPDATE CASCADE;
+
+--
+-- Filtros para la tabla `personal`
+--
+ALTER TABLE `personal`
+  ADD CONSTRAINT `personal_ibfk_1` FOREIGN KEY (`Cargo_Personal`) REFERENCES `cargo` (`Id_Cargo`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT `personal_ibfk_2` FOREIGN KEY (`Turno_Personal`) REFERENCES `turno` (`Id_Turno`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT `personal_ibfk_3` FOREIGN KEY (`Barrio_Personal`) REFERENCES `barrio` (`Id_Barrio`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT `personal_ibfk_4` FOREIGN KEY (`Ciudad_Personal`) REFERENCES `ciudad` (`Id_Ciudad`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT `personal_ibfk_5` FOREIGN KEY (`Curso_Personal`) REFERENCES `cursos` (`Id_Curso`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
