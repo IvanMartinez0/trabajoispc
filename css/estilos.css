@@ -1,0 +1,54 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+header{
+    display: flex;
+    border: 1px solid red;
+    width: 100%;
+    height: 120px;
+}
+
+.caja-menu{
+    border: 1px solid black;
+    width: 60px;
+    height: 60px;
+    margin-top: 60px;
+}
+
+.caja-titulo{
+    border: 1px solid black;
+    margin: auto;
+    width: 38%;
+    height: 60px;
+    margin-top: 60px;
+}
+
+#titulo{
+    font-size: 55px;
+    text-align: center;
+}
+
+.fondo{
+    border:1px solid blue;
+    background-image: url(../img/fondo2.jpeg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    width: 100%;
+    height: 700px;
+}
+
+.caja{
+    border: 1px solid red;
+    width: 80%;
+    height: 56%;
+    margin: auto;
+    margin-top: 90px;
+}
+.caja p{
+    font-size: 30px;
+    color: rgb(72, 233, 40);
+    text-align: center;
+}
