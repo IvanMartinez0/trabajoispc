@@ -24,16 +24,16 @@ CREATE TABLE `producto` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish_ci;
 
 INSERT INTO `producto` ( `id_prod`, `nombre_prod`, `precio_prod`,`descrip_prod`) VALUES
-(1,'Sandwich de pollo a la parrilla ', '1400','Sandwich de pollo cosinado en parrilla con pan de salvado y aderezos a eleccion'),
-(2,'Sandwich de jamon y queso ', '1160','Sandwich de jamon y queso tostado'),
-(3,'Ensalada cesar', '950','Ensalada cesar con lechuga romana y croûtons con jugo de limón, aceite de oliva, huevo, salsa Worcestershire, anchoas, ajo, mostaza de Dijon, queso parmesano y pimienta negra'),
-(4,'Ensalada de espinaca y fresas ', '1200','Ensalada de espinaca, fresas, nueces, queso de cabra, vinagre balsamico, miel, aceite de oliva extra virgen, sal y pimienta negra'),
-(5,'Tarta de frutilla ', '1100','Tarta de frutilla de harina de trigo, ralladura de limon, manteca, azucar, yema de huevo, crema de leche, frutilla y azucar impalpable, '),
-(6,'Tarta de durazno', '1250','Tarta de frutilla con harina de trigo, ralladura de limon, manteca, azucar, yema de huevo, crema de leche, duraznos y azucar impalpable '),
-(7,'Choripan ', '550','Choripan con chorizo porcino, pan flauta, aderezos a gusto y chimichurri'),
-(8,'Empanada de jamon y queso/carne', '200','Empanada de jamon cosido y queso fresco con huevo / carne molida condimentada con cebolla, pimienta y huevo'),
-(9,'Empanada arabe', '220','Empanada arabe de carne molida con huevo, cebolla y jugo de limon'),
-(10,'Spaguetti a la bolognesa', '1500','Fideos spaguetti con salsa de tomate y condimentada con ajo, sal, aceite de oliva, laurel, albaca y queso a gusto');
+(1,'Sandwich de pollo a la parrilla ', '1400 pesos ','Sandwich de pollo cosinado en parrilla con pan de salvado y aderezos a eleccion'),
+(2,'Sandwich de jamon y queso ', '1160 pesos ','Sandwich de jamon y queso tostado'),
+(3,'Ensalada cesar', '950 pesos ','Ensalada cesar con lechuga romana y croûtons con jugo de limón, aceite de oliva, huevo, salsa Worcestershire, anchoas, ajo, mostaza de Dijon, queso parmesano y pimienta negra'),
+(4,'Ensalada de espinaca y fresas ', '1200 pesos ','Ensalada de espinaca, fresas, nueces, queso de cabra, vinagre balsamico, miel, aceite de oliva extra virgen, sal y pimienta negra'),
+(5,'Tarta de frutilla ', '1100 pesos ','Tarta de frutilla de harina de trigo, ralladura de limon, manteca, azucar, yema de huevo, crema de leche, frutilla y azucar impalpable, '),
+(6,'Tarta de durazno', '1250 pesos ','Tarta de frutilla con harina de trigo, ralladura de limon, manteca, azucar, yema de huevo, crema de leche, duraznos y azucar impalpable '),
+(7,'Choripan ', '550 pesos ','Choripan con chorizo porcino, pan flauta, aderezos a gusto y chimichurri'),
+(8,'Empanada de jamon y queso/carne', '200 pesos ','Empanada de jamon cosido y queso fresco con huevo / carne molida condimentada con cebolla, pimienta y huevo'),
+(9,'Empanada arabe', '220 pesos ','Empanada arabe de carne molida con huevo, cebolla y jugo de limon'),
+(10,'Spaguetti a la bolognesa', '1500 pesos ','Fideos spaguetti con salsa de tomate y condimentada con ajo, sal, aceite de oliva, laurel, albaca y queso a gusto');
 
 CREATE TABLE `promo` (
   `id_promo` int(11) primary key NOT NULL,
@@ -45,8 +45,8 @@ CREATE TABLE `promo` (
 
 
 INSERT INTO `promo` (`id_promo`,`nombre_promo`, `descrip_promo`, `precio_promo`) VALUES
-(1,'desayuno', 'cafe mediano + 2 criollos + una factura', '780'),
-(2,'almuerzo', 'milanesa de carne + papas hervidas + gaseosa a eleccion', '2400');
+(1,'desayuno', 'cafe mediano + 2 criollos + una factura', '780 pesos'),
+(2,'almuerzo', 'milanesa de carne + papas hervidas + gaseosa a eleccion', '2400 pesos');
 
 
 
