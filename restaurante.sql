@@ -1,96 +1,53 @@
--- phpMyAdmin SQL Dump
--- version 5.2.0
--- https://www.phpmyadmin.net/
---
--- Servidor: 127.0.0.1
--- Tiempo de generación: 26-06-2023 a las 20:55:06
--- Versión del servidor: 10.4.27-MariaDB
--- Versión de PHP: 8.2.0
 
-SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-START TRANSACTION;
-SET time_zone = "+00:00";
+CREATE TABLE `mesa` ( /*creacion de la tabla mesa*/
+  `id_mesa` int(11) primary key NOT NULL,
+  `capacidad_mesa` varchar(15) NOT NULL,
+  `num_mesa` varchar(5) NOT NULL,
+  `tipo_mesa` varchar(15) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish_ci; /*definicion del lenguaje de la tabla*/
 
+INSERT INTO `mesa` (`id_mesa`, `capacidad_mesa`, `num_mesa`,`tipo_mesa`) VALUES /* llenado de los campos */
+(1, '5 personas', '5','exterior'),
+(2, '5 personas', '6','exterior'),
+(3, '5 personas', '7','exterior'),
+(4, '5 personas', '8','exterior'),
+(5, '4 personas', '2','interior'),
+(6, '4 personas', '1','interior'),
+(7, '4 personas', '3','interior'),
+(8, '2 personas', '4','interior');
 
-/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
-/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
-/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8mb4 */;
-
---
--- Base de datos: `restaurante`
---
-
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `mesa`
---
-
-CREATE TABLE `mesa` (
-  `id_mesa` int(11) NOT NULL,
-  `capacidad_mesa` varchar(30) NOT NULL,
-  `num_mesa` varchar(30) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish_ci;
-
---
--- Volcado de datos para la tabla `mesa`
---
-
-INSERT INTO `mesa` (`id_mesa`, `capacidad_mesa`, `num_mesa`) VALUES
-(1, '5', '1'),
-(2, '4', '2');
-
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `producto`
---
-
-CREATE TABLE `producto` (
-  `id_prod` int(11) NOT NULL,
-  `nombre_prod` varchar(30) NOT NULL,
+CREATE TABLE `producto` ( /*creacion de la tabla producto */
+  `id_prod` int(11) primary key NOT NULL,
+  `nombre_prod` varchar(50) NOT NULL,
   `precio_prod` varchar(30) NOT NULL,
   `descrip_prod` text NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish_ci; /*declaracion del lenguaje de la tabla*/
 
---
--- Volcado de datos para la tabla `producto`
---
+INSERT INTO `producto` ( `id_prod`, `nombre_prod`, `precio_prod`,`descrip_prod`) VALUES /*llenado de campos*/
+(1,'Sandwich de pollo a la parrilla ', '1400 pesos ','Sandwich de pollo cosinado en parrilla con pan de salvado y aderezos a eleccion'),
+(2,'Sandwich de jamon y queso ', '1160 pesos ','Sandwich de jamon y queso tostado'),
+(3,'Ensalada cesar', '950 pesos ','Ensalada cesar con lechuga romana y croûtons con jugo de limón, aceite de oliva, huevo, salsa Worcestershire, anchoas, ajo, mostaza de Dijon, queso parmesano y pimienta negra'),
+(4,'Ensalada de espinaca y fresas ', '1200 pesos ','Ensalada de espinaca, fresas, nueces, queso de cabra, vinagre balsamico, miel, aceite de oliva extra virgen, sal y pimienta negra'),
+(5,'Tarta de frutilla ', '1100 pesos ','Tarta de frutilla de harina de trigo, ralladura de limon, manteca, azucar, yema de huevo, crema de leche, frutilla y azucar impalpable, '),
+(6,'Tarta de durazno', '1250 pesos ','Tarta de frutilla con harina de trigo, ralladura de limon, manteca, azucar, yema de huevo, crema de leche, duraznos y azucar impalpable '),
+(7,'Choripan ', '550 pesos ','Choripan con chorizo porcino, pan flauta, aderezos a gusto y chimichurri'),
+(8,'Empanada de jamon y queso/carne', '200 pesos ','Empanada de jamon cosido y queso fresco con huevo / carne molida condimentada con cebolla, pimienta y huevo'),
+(9,'Empanada arabe', '220 pesos ','Empanada arabe de carne molida con huevo, cebolla y jugo de limon'),
+(10,'Spaguetti a la bolognesa', '1500 pesos ','Fideos spaguetti con salsa de tomate y condimentada con ajo, sal, aceite de oliva, laurel, albaca y queso a gusto');
 
-INSERT INTO `producto` (`id_prod`, `nombre_prod`, `precio_prod`, `descrip_prod`) VALUES
-(1, 'milanesa a la napolitana', '1100', 'milanesa de pollo a la napolitana'),
-(2, 'papas fritas pequeñas', '350', 'paquete de papas fritas tamaño pequeño');
-
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `promo`
---
-
-CREATE TABLE `promo` (
-  `id_promo` int(11) NOT NULL,
+CREATE TABLE `promo` ( /*creacion de la tabla promo*/
+  `id_promo` int(11) primary key NOT NULL,
   `nombre_promo` varchar(30) NOT NULL,
-  `descripcion_promo` text NOT NULL,
+  `descrip_promo` text NOT NULL,
   `precio_promo` varchar(30) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish_ci; /*definicion del lenguaje*/
 
---
--- Volcado de datos para la tabla `promo`
---
+INSERT INTO `promo` (`id_promo`,`nombre_promo`, `descrip_promo`, `precio_promo`) VALUES /*llenado de datos*/
+(1,'desayuno', 'cafe mediano + 2 criollos + una factura', '780 pesos'),
+(2,'almuerzo', 'milanesa de carne + papas hervidas + gaseosa a eleccion', '2400 pesos');
 
-INSERT INTO `promo` (`id_promo`, `nombre_promo`, `descripcion_promo`, `precio_promo`) VALUES
-(1, 'desayuno', 'cafe mediano + 2 criollos + una factura', '780'),
-(2, 'almuerzo', 'milanesa de carne + papas hervidas + gaseosa a eleccion', '2400');
-
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `reserva`
---
-
-CREATE TABLE `reserva` (
-  `id_res` int(11) NOT NULL,
+CREATE TABLE `reserva` ( /*creacion de la tabla reserva*/
+  `id_res` int(11) primary key NOT NULL,
   `nombre_res` varchar(30) NOT NULL,
   `dni_res` varchar(30) NOT NULL,
   `fecha_reserva` date NOT NULL,
@@ -98,112 +55,30 @@ CREATE TABLE `reserva` (
   `mesa_reserva` int(11) NOT NULL,
   `apellido_res` varchar(30) NOT NULL,
   `tel_res` varchar(30) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish_ci; /*definicion del lenguaje*/
 
--- --------------------------------------------------------
 
---
--- Estructura de tabla para la tabla `restaaurante`
---
-
-CREATE TABLE `restaaurante` (
-  `id_rest` int(11) NOT NULL,
+CREATE TABLE `restaurante` ( /*creacion de la tabla restaurante*/
+  `id_rest` int(11) primary key NOT NULL,
   `producto_rest` int(11) NOT NULL,
   `promo-rest` int(11) NOT NULL,
   `reserva_rest` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci; /*definicion del idioma*/
 
---
--- Índices para tablas volcadas
---
 
---
--- Indices de la tabla `mesa`
---
-ALTER TABLE `mesa`
-  ADD PRIMARY KEY (`id_mesa`);
-
---
--- Indices de la tabla `producto`
---
-ALTER TABLE `producto`
-  ADD PRIMARY KEY (`id_prod`);
-
---
--- Indices de la tabla `promo`
---
-ALTER TABLE `promo`
-  ADD PRIMARY KEY (`id_promo`);
-
---
--- Indices de la tabla `reserva`
---
 ALTER TABLE `reserva`
-  ADD PRIMARY KEY (`id_res`),
-  ADD KEY `mesa_reserva` (`mesa_reserva`);
+  ADD KEY `mesa_reserva` (`mesa_reserva`); /* definicion de la llave foranea*/
 
---
--- Indices de la tabla `restaaurante`
---
-ALTER TABLE `restaaurante`
-  ADD PRIMARY KEY (`id_rest`),
-  ADD KEY `producto_rest` (`producto_rest`),
+ALTER TABLE `restaurante`
+  ADD KEY `producto_rest` (`producto_rest`), /* definicion de llave foranea*/
   ADD KEY `promo-rest` (`promo-rest`),
   ADD KEY `reserva_rest` (`reserva_rest`);
 
---
--- AUTO_INCREMENT de las tablas volcadas
---
+ALTER TABLE `reserva` /*relaciones de la tabla reserva */
+  ADD CONSTRAINT `reserva_ibfk_1` FOREIGN KEY (`mesa_reserva`) REFERENCES `mesa` (`id_mesa`); 
 
---
--- AUTO_INCREMENT de la tabla `mesa`
---
-ALTER TABLE `mesa`
-  MODIFY `id_mesa` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
-
---
--- AUTO_INCREMENT de la tabla `producto`
---
-ALTER TABLE `producto`
-  MODIFY `id_prod` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
-
---
--- AUTO_INCREMENT de la tabla `promo`
---
-ALTER TABLE `promo`
-  MODIFY `id_promo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
-
---
--- AUTO_INCREMENT de la tabla `reserva`
---
-ALTER TABLE `reserva`
-  MODIFY `id_res` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT de la tabla `restaaurante`
---
-ALTER TABLE `restaaurante`
-  MODIFY `id_rest` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- Restricciones para tablas volcadas
---
-
---
--- Filtros para la tabla `reserva`
---
-ALTER TABLE `reserva`
-  ADD CONSTRAINT `reserva_ibfk_1` FOREIGN KEY (`mesa_reserva`) REFERENCES `mesa` (`id_mesa`);
-
---
--- Filtros para la tabla `restaaurante`
---
-ALTER TABLE `restaaurante`
-  ADD CONSTRAINT `restaaurante_ibfk_1` FOREIGN KEY (`promo-rest`) REFERENCES `promo` (`id_promo`),
-  ADD CONSTRAINT `restaaurante_ibfk_2` FOREIGN KEY (`producto_rest`) REFERENCES `producto` (`id_prod`),
-  ADD CONSTRAINT `restaaurante_ibfk_3` FOREIGN KEY (`reserva_rest`) REFERENCES `reserva` (`id_res`);
+ALTER TABLE `restaurante` /*relaciones de la tabla restaurante*/
+  ADD CONSTRAINT `restaurante_ibfk_1` FOREIGN KEY (`promo-rest`) REFERENCES `promo` (`id_promo`),
+  ADD CONSTRAINT `restaurante_ibfk_2` FOREIGN KEY (`producto_rest`) REFERENCES `producto` (`id_prod`),
+  ADD CONSTRAINT `restaurante_ibfk_3` FOREIGN KEY (`reserva_rest`) REFERENCES `reserva` (`id_res`);
 COMMIT;
-
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
-/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
