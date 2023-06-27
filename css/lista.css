@@ -38,9 +38,8 @@ header{
     font-size: 55px;
     text-align: center;
 }
-/*----------------------FONDO------------------------*/
-.caja-fondo{
-}
+
+/*---------------FONDO----------------*/
 
 .fondo{
     border:1px solid blue;
@@ -49,51 +48,44 @@ header{
     background-position: center;
     background-size: cover;
     width: 100%;
-    height: 600px;
+    height: 1200px;
     opacity: 0.7;
+    position: relative;
 }
 
 .caja{
-    border: 1px solid red;
-    width: 80%;
-    height: 64%;
-    margin: auto;
-    margin-top: 90px;
     position: absolute;
-    top: 80px;
-    left: 130px;
+    border:1px solid red;
+    width: 60%;
+    height: 1100px;
+    top: 180px;
+    left: 260px;
 }
 
-.subCaja{
-    border:1px solid blue;
-    margin-top: 20px;
-    width: 100%;
-    height: 86%;
-    justify-content: space-between;
+.caja .foto{
+    width: 809px;
+    height: 1100px;
 }
 
-.subCaja .imagen{
-    width: 1080px;
-    height: 330px ;
-}
-
-button{
-    border: 1px solid rgb(163, 159, 159);
+.cajaP{
     position: absolute;
-    top: 140px;
-    width: 60px;
-    height: 165px;
-    opacity: 0.6;
-}
-.boton1{
-    left: 1021px;
+    border: 1px solid black;
+    width: 480px;
+    height: 700px;
+    top: 430px;
+    left: 300px;
 }
 
-.caja p{
-    font-size: 30px;
-    color: rgb(0, 0, 0);
-    text-align: center;
+.cajaP ul{
+    margin-left: 15px;
 }
+
+.cajaP ul li{
+    font-size: 20px;
+    margin-top: 10px;
+}
+
+/*------------FOTER--------------*/
 
 footer{
     background-color: rgb(61, 61, 60);
@@ -105,3 +97,4 @@ footer{
 footer a{
     color:white;
 }
+
