@@ -63,14 +63,16 @@ INSERT INTO `promo` (`id_promo`,`nombre_promo`, `descrip_promo`, `precio_promo`)
 CREATE TABLE `reserva` ( /*creacion de la tabla reserva*/
   `id_res` int(11) primary key NOT NULL,
   `nombre_res` varchar(30) NOT NULL,
+  `apellido_res` varchar(30) NOT NULL,
   `dni_res` varchar(30) NOT NULL,
+  `tel_res` varchar(30) NOT NULL,
   `fecha_reserva` date NOT NULL,
   `hora_reserva` int(11) NOT NULL,
-  `mesa_reserva` int(11) NOT NULL,
-  `apellido_res` varchar(30) NOT NULL,
-  `tel_res` varchar(30) NOT NULL
+  `mesa_reserva` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish_ci; /*definicion del lenguaje*/
 
+INSERT INTO `reserva` (`id_res`,`nombre_res`, `apellido_res`, `dni_res`,`tel_res`,`fecha_reserva`,`hora_reserva`,`mesa_reserva`) VALUES /*llenado de datos*/
+(1,'Ivan Alejandro', 'Martinez','45932126','3515739074','2023/07/30','3','4');
 
 CREATE TABLE `restaurante` ( /*creacion de la tabla restaurante*/
   `id_rest` int(11) primary key NOT NULL,
