@@ -44,7 +44,7 @@ CREATE TABLE `promo` (
 
 
 
-INSERT INTO `promo` (`id_promo`,`nombre_promo`, `descripcion_promo`, `precio_promo`) VALUES
+INSERT INTO `promo` (`id_promo`,`nombre_promo`, `descrip_promo`, `precio_promo`) VALUES
 (1,'desayuno', 'cafe mediano + 2 criollos + una factura', '780'),
 (2,'almuerzo', 'milanesa de carne + papas hervidas + gaseosa a eleccion', '2400');
 
