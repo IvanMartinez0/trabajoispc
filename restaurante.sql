@@ -16,6 +16,20 @@ INSERT INTO `mesa` (`id_mesa`, `capacidad_mesa`, `num_mesa`,`tipo_mesa`) VALUES 
 (7, '4 personas', '3','interior'),
 (8, '2 personas', '4','interior');
 
+CREATE TABLE `horario` ( /*creacion de la tabla horario*/
+  `id_hora` int(11) primary key NOT NULL,
+  `hora` varchar(15) NOT NULL
+  ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish_ci; /*definicion del lenguaje de la tabla*/
+
+  INSERT INTO `horario` (`id_hora`, `hora`) VALUES /* llenado de los campos */
+(1, '10:00'),
+(2, '10:30'),
+(3, '11:00'),
+(4, '11:30'),
+(5, '12:00'),
+(6, '12:30');
+
+
 CREATE TABLE `producto` ( /*creacion de la tabla producto */
   `id_prod` int(11) primary key NOT NULL,
   `nombre_prod` varchar(50) NOT NULL,
@@ -49,14 +63,16 @@ INSERT INTO `promo` (`id_promo`,`nombre_promo`, `descrip_promo`, `precio_promo`)
 CREATE TABLE `reserva` ( /*creacion de la tabla reserva*/
   `id_res` int(11) primary key NOT NULL,
   `nombre_res` varchar(30) NOT NULL,
-  `dni_res` varchar(30) NOT NULL,
-  `fecha_reserva` date NOT NULL,
-  `hora_reserva` varchar(11) NOT NULL,
-  `mesa_reserva` int(11) NOT NULL,
   `apellido_res` varchar(30) NOT NULL,
-  `tel_res` varchar(30) NOT NULL
+  `dni_res` varchar(30) NOT NULL,
+  `tel_res` varchar(30) NOT NULL,
+  `fecha_reserva` date NOT NULL,
+  `hora_reserva` int(11) NOT NULL,
+  `mesa_reserva` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish_ci; /*definicion del lenguaje*/
 
+INSERT INTO `reserva` (`id_res`,`nombre_res`, `apellido_res`, `dni_res`,`tel_res`,`fecha_reserva`,`hora_reserva`,`mesa_reserva`) VALUES /*llenado de datos*/
+(1,'Ivan Alejandro', 'Martinez','45932126','3515739074','2023/07/30','3','4');
 
 CREATE TABLE `restaurante` ( /*creacion de la tabla restaurante*/
   `id_rest` int(11) primary key NOT NULL,
@@ -67,7 +83,8 @@ CREATE TABLE `restaurante` ( /*creacion de la tabla restaurante*/
 
 
 ALTER TABLE `reserva`
-  ADD KEY `mesa_reserva` (`mesa_reserva`); /* definicion de la llave foranea*/
+  ADD KEY `mesa_reserva` (`mesa_reserva`), /* definicion de la llave foranea*/
+  ADD KEY `hora_reserva` (`hora_reserva`);
 
 ALTER TABLE `restaurante`
   ADD KEY `producto_rest` (`producto_rest`), /* definicion de llave foranea*/
@@ -75,7 +92,8 @@ ALTER TABLE `restaurante`
   ADD KEY `reserva_rest` (`reserva_rest`);
 
 ALTER TABLE `reserva` /*relaciones de la tabla reserva */
-  ADD CONSTRAINT `reserva_ibfk_1` FOREIGN KEY (`mesa_reserva`) REFERENCES `mesa` (`id_mesa`); 
+  ADD CONSTRAINT `reserva_ibfk_1` FOREIGN KEY (`mesa_reserva`) REFERENCES `mesa` (`id_mesa`),
+  ADD CONSTRAINT `reserva_ibfk_2` FOREIGN KEY (`hora_reserva`) REFERENCES `horario` (`id_hora`);
 
 ALTER TABLE `restaurante` /*relaciones de la tabla restaurante*/
   ADD CONSTRAINT `restaurante_ibfk_1` FOREIGN KEY (`promo-rest`) REFERENCES `promo` (`id_promo`),
