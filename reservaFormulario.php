@@ -1,3 +1,6 @@
+<?php
+include "conexionsql.php";
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -118,7 +121,7 @@
         <ul>
             <li><a href="@">Inicio</a></li>
             <li><a href="QuienesSomos.html">Quienes Somos?</a></li>
-            <li><a href="ListaPrecio.html">Lista De Presio</a></li>
+            <li><a href="ListaPrecio.html">Lista De Precios</a></li>
             <li><a href="Reserva.html">Reservas</a></li>
         </ul>
     </footer>
