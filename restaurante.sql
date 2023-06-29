@@ -1,6 +1,6 @@
 
 CREATE TABLE `mesa` ( /*creacion de la tabla mesa*/
-  `id_mesa` int(11) primary key NOT NULL,
+  `id_mesa` int(11) primary key NOT NULL AUTO_INCREMENT,
   `capacidad_mesa` varchar(15) NOT NULL,
   `num_mesa` varchar(5) NOT NULL,
   `tipo_mesa` varchar(15) NOT NULL
@@ -17,7 +17,7 @@ INSERT INTO `mesa` (`id_mesa`, `capacidad_mesa`, `num_mesa`,`tipo_mesa`) VALUES 
 (8, '2 personas', '4','interior');
 
 CREATE TABLE `horario` ( /*creacion de la tabla horario*/
-  `id_hora` int(11) primary key NOT NULL,
+  `id_hora` int(11) primary key NOT NULL AUTO_INCREMENT,
   `hora` varchar(15) NOT NULL
   ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish_ci; /*definicion del lenguaje de la tabla*/
 
@@ -31,7 +31,7 @@ CREATE TABLE `horario` ( /*creacion de la tabla horario*/
 
 
 CREATE TABLE `producto` ( /*creacion de la tabla producto */
-  `id_prod` int(11) primary key NOT NULL,
+  `id_prod` int(11) primary key NOT NULL AUTO_INCREMENT,
   `nombre_prod` varchar(50) NOT NULL,
   `precio_prod` varchar(30) NOT NULL,
   `descrip_prod` text NOT NULL
@@ -50,7 +50,7 @@ INSERT INTO `producto` ( `id_prod`, `nombre_prod`, `precio_prod`,`descrip_prod`)
 (10,'Spaguetti a la bolognesa', '1500 pesos ','Fideos spaguetti con salsa de tomate y condimentada con ajo, sal, aceite de oliva, laurel, albaca y queso a gusto');
 
 CREATE TABLE `promo` ( /*creacion de la tabla promo*/
-  `id_promo` int(11) primary key NOT NULL,
+  `id_promo` int(11) primary key NOT NULL AUTO_INCREMENT,
   `nombre_promo` varchar(30) NOT NULL,
   `descrip_promo` text NOT NULL,
   `precio_promo` varchar(30) NOT NULL
@@ -61,21 +61,21 @@ INSERT INTO `promo` (`id_promo`,`nombre_promo`, `descrip_promo`, `precio_promo`)
 (2,'almuerzo', 'milanesa de carne + papas hervidas + gaseosa a eleccion', '2400 pesos');
 
 CREATE TABLE `reserva` ( /*creacion de la tabla reserva*/
-  `id_res` int(11) primary key NOT NULL,
+  `id_res` int(11) primary key NOT NULL AUTO_INCREMENT,
   `nombre_res` varchar(30) NOT NULL,
   `apellido_res` varchar(30) NOT NULL,
   `dni_res` varchar(30) NOT NULL,
   `tel_res` varchar(30) NOT NULL,
-  `fecha_reserva` date NOT NULL,
-  `hora_reserva` int(11) NOT NULL,
-  `mesa_reserva` int(11) NOT NULL
+  `fecha_res` date NOT NULL,
+  `hora_res` int(11) NOT NULL,
+  `mesa_res` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish_ci; /*definicion del lenguaje*/
 
-INSERT INTO `reserva` (`id_res`,`nombre_res`, `apellido_res`, `dni_res`,`tel_res`,`fecha_reserva`,`hora_reserva`,`mesa_reserva`) VALUES /*llenado de datos*/
+INSERT INTO `reserva` (`id_res`,`nombre_res`, `apellido_res`, `dni_res`,`tel_res`,`fecha_res`,`hora_res`,`mesa_res`) VALUES /*llenado de datos*/
 (1,'Ivan Alejandro', 'Martinez','45932126','3515739074','2023/07/30','3','4');
 
 CREATE TABLE `restaurante` ( /*creacion de la tabla restaurante*/
-  `id_rest` int(11) primary key NOT NULL,
+  `id_rest` int(11) primary key NOT NULL AUTO_INCREMENT,
   `producto_rest` int(11) NOT NULL,
   `promo-rest` int(11) NOT NULL,
   `reserva_rest` int(11) NOT NULL
@@ -83,8 +83,8 @@ CREATE TABLE `restaurante` ( /*creacion de la tabla restaurante*/
 
 
 ALTER TABLE `reserva`
-  ADD KEY `mesa_reserva` (`mesa_reserva`), /* definicion de la llave foranea*/
-  ADD KEY `hora_reserva` (`hora_reserva`);
+  ADD KEY `mesa_res` (`mesa_res`), /* definicion de la llave foranea*/
+  ADD KEY `hora_res` (`hora_res`);
 
 ALTER TABLE `restaurante`
   ADD KEY `producto_rest` (`producto_rest`), /* definicion de llave foranea*/
@@ -92,8 +92,8 @@ ALTER TABLE `restaurante`
   ADD KEY `reserva_rest` (`reserva_rest`);
 
 ALTER TABLE `reserva` /*relaciones de la tabla reserva */
-  ADD CONSTRAINT `reserva_ibfk_1` FOREIGN KEY (`mesa_reserva`) REFERENCES `mesa` (`id_mesa`),
-  ADD CONSTRAINT `reserva_ibfk_2` FOREIGN KEY (`hora_reserva`) REFERENCES `horario` (`id_hora`);
+  ADD CONSTRAINT `reserva_ibfk_1` FOREIGN KEY (`mesa_res`) REFERENCES `mesa` (`id_mesa`),
+  ADD CONSTRAINT `reserva_ibfk_2` FOREIGN KEY (`hora_res`) REFERENCES `horario` (`id_hora`);
 
 ALTER TABLE `restaurante` /*relaciones de la tabla restaurante*/
   ADD CONSTRAINT `restaurante_ibfk_1` FOREIGN KEY (`promo-rest`) REFERENCES `promo` (`id_promo`),
