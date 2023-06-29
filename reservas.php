@@ -1,10 +1,4 @@
 <?php
-$nombre_POST['nombre'];
-$apellido_POST['apellido'];
-$tel_POST['telefono'];
-$dni_POST['dni'];
-$fecha_POST['fecha'];
-
 
 include "conexionsql.php";
 
@@ -13,11 +7,20 @@ if (!$conexion){
 }
 else{
     echo "muchas gracias por su reserva!!";
-    $query= "INSERT INTO `reservas`(`nombre_res`,`apellido_res`,`dni_res`,`tel_res`,`fecha_reserva`)
-	 VALUES ('$nombre','$apellido','$tel','$dni','$fecha')";
+    $nombre = $_POST['nombre'];
+    $apellido = $_POST['apellido'];
+    $tel = $_POST['telefono'];
+    $dni = $_POST['dni'];
+    $fecha = $_POST['fechas'];
+	$mesa = $_POST['mesas'];
+    $horario = $_POST['horarios'];
+
+    $query= "INSERT INTO `reserva`(nombre_res,apellido_res,dni_res,tel_res,fecha_res,mesa_res,hora_res)
+	 VALUES ('$nombre','$apellido','$dni','$tel','$fecha','$mesa','$horario')";
 
 	 echo $query;
 
-	 $resultado= mysqli_query($conexion,$query);
-	 mysqli_close($conexion);
+	 $resultado=mysqli_query($conexion,$query);
+     mysqli_close($conexion);
 }
+?>
