@@ -45,7 +45,7 @@ include "conexionsql.php";
                         </li>
                     
                         <li class="menu-li">
-                            <a href="#" class="ancla-menu">Desayuno/Merienda</a>
+                            <a href="menuDesayuno.html" class="ancla-menu">Desayuno/Merienda</a>
                         </li>
 
                         <li class="menu-li">
@@ -177,12 +177,23 @@ include "conexionsql.php";
         </div>
     </div>
 </body>
-    <footer>
+<footer>
+    <div class="derechos">
+        <p id="derechos">Copyright © 2023 IPETyM 246. All rights reserved.</p>
+    </div>
+
+    <div class="link">
         <ul>
             <li><a href="index.html">Inicio</a></li>
             <li><a href="QuienesSomos.html">Quienes Somos?</a></li>
-            <li><a href="ListaPrecio.html">Lista De Precios</a></li>
+            <div class="caja-footer">
+                <p>MENU</p>
+                <li class="sub-footer"><a href="menuDesayuno.html">Desayuno/Merienda</a></li>
+                <li class="sub-footer"><a href="">Almuerzo/Cena</a></li>
+                <li class="sub-footer"><a href="#">Promos</a></li>
+            </div>
             <li><a href="#">Reservas</a></li>
         </ul>
-    </footer>
+    </div>
+</footer>
 </html>
