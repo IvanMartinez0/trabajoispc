@@ -144,8 +144,6 @@ header:has(.menu_desplegable:target){
 
 
 /*----------------------FONDO------------------------*/
-.caja-fondo{
-}
 
 .fondo{
     border:1px solid blue;
