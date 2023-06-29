@@ -132,7 +132,7 @@ include "conexionsql.php";
         <ul>
             <li><a href="@">Inicio</a></li>
             <li><a href="QuienesSomos.html">Quienes Somos?</a></li>
-            <li><a href="ListaPrecio.html">Lista De Presio</a></li>
+            <li><a href="ListaPrecio.html">Lista De Precios</a></li>
             <li><a href="Reserva.html">Reservas</a></li>
         </ul>
     </footer>
