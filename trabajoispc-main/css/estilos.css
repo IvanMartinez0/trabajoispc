@@ -1,0 +1,130 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+header{
+    display: flex;
+    border: 1px solid red;
+    width: 100%;
+    height: 110px;
+    background-color: rgb(61, 61, 60);
+}
+
+.caja-menu{
+    border: 1px solid black;
+    width: 60px;
+    height: 60px;
+    margin-top: 50px;
+    background-color: blueviolet;
+}
+
+.caja-menu p{
+    font-size: 60px;
+    font-weight: 1000;
+    margin-top: -15px;
+    text-align: center;
+}
+
+.caja-titulo{
+    border: 1px solid black;
+    margin-left:26% ;
+    width: 38%;
+    height: 60px;
+    margin-top: 30px;
+}
+
+#titulo{
+    font-size: 55px;
+    text-align: center;
+}
+/*----------------------FONDO------------------------*/
+.caja-fondo{
+}
+
+.fondo{
+    border:1px solid blue;
+    background-image: url(../img/fondo2.jpeg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    width: 100%;
+    height: 600px;
+    opacity: 0.7;
+}
+
+.caja{
+    border: 1px solid red;
+    width: 80%;
+    height: 64%;
+    margin: auto;
+    margin-top: 90px;
+    position: absolute;
+    top: 80px;
+    left: 130px;
+}
+
+.subCaja{
+    border:1px solid blue;
+    margin-top: 20px;
+    width: 100%;
+    height: 86%;
+    justify-content: space-between;
+}
+
+.subCaja .imagen{
+    width: 1080px;
+    height: 330px ;
+}
+
+button{
+    border: 1px solid rgb(163, 159, 159);
+    position: absolute;
+    top: 140px;
+    width: 60px;
+    height: 165px;
+    opacity: 0.6;
+}
+.boton1{
+    left: 1021px;
+}
+
+.caja p{
+    font-size: 30px;
+    color: rgb(0, 0, 0);
+    text-align: center;
+}
+
+footer{
+    background-color: rgb(61, 61, 60);
+    border: 1px solid black;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+footer a{
+    color:white;
+    text-align: center;
+}
+
+/*Botones animacion*/
+
+
+.btn {
+    padding: 40px;
+    text-decoration: none;
+    color: #fff;
+    letter-spacing: 10px;
+    border: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    font-family: Arial, sans-serif;
+    border: 2px solid #000000;
+  }
+  
+  .btn:hover {
+    background-color: #004f7c;
+    border-color: #03094a;
+  }
