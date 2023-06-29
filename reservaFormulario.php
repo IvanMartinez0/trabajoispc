@@ -41,7 +41,7 @@ include "conexionsql.php";
                 <div class="contenido-menu">
                     <ul class="sub-menu">
                         <li class="menu-li">
-                            <a href="#" class="ancla-menu">Promos</a>
+                            <a href="menuPromo.html" class="ancla-menu">Promos</a>
                         </li>
                     
                         <li class="menu-li">
@@ -49,7 +49,7 @@ include "conexionsql.php";
                         </li>
 
                         <li class="menu-li">
-                            <a href="#" class="ancla-menu">Almuerzo/Cena</a>
+                            <a href="menuAlmuerzo.html" class="ancla-menu">Almuerzo/Cena</a>
                         </li>
                         </li>
                     </ul>
@@ -189,8 +189,8 @@ include "conexionsql.php";
             <div class="caja-footer">
                 <p>MENU</p>
                 <li class="sub-footer"><a href="menuDesayuno.html">Desayuno/Merienda</a></li>
-                <li class="sub-footer"><a href="">Almuerzo/Cena</a></li>
-                <li class="sub-footer"><a href="#">Promos</a></li>
+                <li class="sub-footer"><a href="menuAlmuerzo.html">Almuerzo/Cena</a></li>
+                <li class="sub-footer"><a href="menuPromo.html">Promos</a></li>
             </div>
             <li><a href="#">Reservas</a></li>
         </ul>
