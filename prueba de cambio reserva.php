@@ -1,26 +1,11 @@
 <?php
 include "conexionsql.php";
 
-// Realizar la consulta SELECT con una condición de unión
-$query = "SELECT nombre_res, dni_res, hora FROM reserva INNER JOIN horario ON hora_res = id_hora INNER JOIN reserva ON hora_res = id_hora";
-$result = mysqli_query($conexion, $query);
+$sql= "SELECT `nombre_res`,`apellido_res`,`dni_res`,`tel_res`,`fecha_res`,`hora_res`,`mesa_res` FROM reserva"; /*se piden los datos que se van a mostrar*/
+$query= mysqli_query($conexion,$sql);/*la coneccion*/
 
-// Verificar si hay resultados y mostrarlos en una tabla
-if (mysqli_num_rows($result) > 0) {
-    echo "<table>";
-    echo "<tr><th>Nombre</th><th>DNI</th><th>Horario de reserva</th></tr>";
-    while ($row = mysqli_fetch_assoc($result)) {
-        echo "<tr>";
-        echo "<td>" . $row["nombre_res"] . "</td>";
-        echo "<td>" . $row["dni_res"] . "</td>";
-        echo "<td>" . $row["hora"] . "</td>";
-        echo "</tr>";
-    }
-    echo "</table>";
-} else {
-    echo "No se encontraron registros.";
-}
-?>
+
+  ?>
 
 <!DOCTYPE html>
 <html>
@@ -30,8 +15,55 @@ if (mysqli_num_rows($result) > 0) {
     <title>Modifique su reserva</title>
 </head>
 <body>
-    <p align="center">¿Desea editar su reserva?</p>
-    <input type="submit" name="Borrar">
-    <input type="submit" name="Editar">
+    <div>
+        
+<form action="">
+    <h1>Editar Reserva</h1>
+<input type="text" name="Nombre" placeholder="Nombre">
+<input type="text" name="apellido" placeholder="apellido">
+<input type="text" name="DNI" placeholder="dni">
+<input type="text" name="telefono" placeholder="telefono">
+<input type="date" name="fecha" placeholder="fecha">
+<input type="text" name="hora" placeholder="horario">
+<input type="text" name="mesa" placeholder="mesa">
+<input type="submit" name="Modificar">
+
+
+</form>
+
+    </div>
+    <div>
+        
+<table>
+    <thead>
+        <tr>
+            <th>Nombre</th>
+            <th>Aoellido</th>
+            <th>DNI</th>
+            <th>Telefono</th>
+            <th>Fecha</th>
+            <th>Horario</th>
+            <th>Mesa</th>
+        </tr>
+    </thead>
+    <tbody>
+        <?php while($row = mysqli_fetch_array($query)):   /*bucle while que imprime los datos de las personas */?>
+        <tr>
+        <th> <?= $row ['nombre_res']; /*al usar el comando = $row se ahorra el "echo" */ ?></th>
+        <th><?= $row ['apellido_res'] ?></th>
+        <th><?= $row ['dni_res'] ?></th>
+        <th><?= $row ['tel_res'] ?></th>
+        <th><?= $row ['fecha_res'] ?></th>
+        <th><?= $row ['hora_res'] ?></th>
+        <th><?= $row ['mesa_res'] ?></th>
+        <th>Editar</th>
+        <th>Eliminar</th>
+    </tr>
+<?php endwhile;  /*finalizacion del bucle*/?>
+    </tbody>
+</table>
+
+    </div>
 </body>
 </html>
+
