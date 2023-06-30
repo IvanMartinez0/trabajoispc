@@ -1,20 +1,18 @@
 
 CREATE TABLE `mesa` ( /*creacion de la tabla mesa*/
   `id_mesa` int(11) primary key NOT NULL AUTO_INCREMENT,
-  `capacidad_mesa` varchar(15) NOT NULL,
-  `num_mesa` varchar(5) NOT NULL,
-  `tipo_mesa` varchar(15) NOT NULL
+  `capacidad_mesa` varchar(50) NOT NULL,
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish_ci; /*definicion del lenguaje de la tabla*/
 
-INSERT INTO `mesa` (`id_mesa`, `capacidad_mesa`, `num_mesa`,`tipo_mesa`) VALUES /* llenado de los campos */
-(1, '5 personas', '5','exterior'),
-(2, '5 personas', '6','exterior'),
-(3, '5 personas', '7','exterior'),
-(4, '5 personas', '8','exterior'),
-(5, '4 personas', '2','interior'),
-(6, '4 personas', '1','interior'),
-(7, '4 personas', '3','interior'),
-(8, '2 personas', '4','interior');
+INSERT INTO `mesa` (`id_mesa`, `capacidad_mesa`) VALUES /* llenado de los campos */
+(1, '5 personas -- Exterior'),
+(2, '5 personas -- Interior'),
+(3, '6 personas -- Exterior'),
+(4, '6 personas -- Interior'),
+(5, '4 personas -- Exterior'),
+(6, '4 personas -- Interior'),
+(7, '2 personas -- Exterior'),
+(8, '2 personas -- Interior');
 
 CREATE TABLE `horario` ( /*creacion de la tabla horario*/
   `id_hora` int(11) primary key NOT NULL AUTO_INCREMENT,
@@ -22,6 +20,7 @@ CREATE TABLE `horario` ( /*creacion de la tabla horario*/
   ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish_ci; /*definicion del lenguaje de la tabla*/
 
   INSERT INTO `horario` (`id_hora`, `hora`) VALUES /* llenado de los campos */
+
 (1, '10:00'),
 (2, '10:30'),
 (3, '11:00'),
