@@ -2,7 +2,7 @@
     include("conexionsql.php");
     
 ?>
-<<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8">
@@ -11,8 +11,9 @@
 </head>
 <body>
     <form action="menuActualizar.php" method="POST">
-<label>Introduzca su DNI</label>
-<input type="text" name="buscar">
+        <th>Ingrese su DNI </th>
+<br>
+<input type="text" name="buscar" placeholder="DNI sin puntos ni guiones">
 
 <input type="submit" name="enviar">
 
