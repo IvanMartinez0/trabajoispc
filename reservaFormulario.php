@@ -115,7 +115,7 @@ include "conexionsql.php";
 
                     <div class="grupo">
 
-                        <label>Horarios disponibles</label>
+                        <label class="segundo">Horarios disponibles</label>
                         <select name="horarios">
         
                         <?php
@@ -149,7 +149,7 @@ include "conexionsql.php";
 
                     <div class="grupo">
 
-                    <label>Mesas disponibles para:</label>
+                    <label class="segundo">Mesas disponibles para:</label>
 				<select name="mesas">
 
 				<?php
@@ -180,7 +180,7 @@ include "conexionsql.php";
                     </div>
 
                      <div class="botones">
-            <input type="submit" name="Enviar">
+            <input type="submit" name="Enviar" class="botones">
                     </div>
 				</select>
                 </form>

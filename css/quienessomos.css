@@ -10,7 +10,7 @@
 }
 body{
     height: 100vh !important;
-    background: url(fondorestaurante.jpg);
+    background: url(../img/fondo2.jpeg);
     background-attachment: fixed;
     background-size: center;
     background-position: center ;
