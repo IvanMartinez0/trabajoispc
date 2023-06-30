@@ -12,12 +12,72 @@ include "conexionsql.php";
     <title>Document</title>
 </head>
 <header>
-    <div class="caja-menu">
-        <p>...</p>
+    <div class="contenedor">
+        <h id="titulo">Restaurant</h>
+        <a href="#menu" class="nav_menu">
+            <img src="img/menu.svg" class="icono">
+        </a>
+        <a href="#" class="nav_menu nav_menu--segundo">
+            <img src="img/cerrar.svg" class="icono">
+        </a>
+
+        <ul class="menu_desplegable" id="menu">
+            <li class="lista-desplegable">
+                <a href="index.html" class="desplegable-link">
+                    <img src="img/home.svg" alt="icono-desplegable">
+                    <span class="desplegable-span">Inicio</span>
+                </a>
+            </li>
+
+            <li class="lista-desplegable">
+                <a href="" class="desplegable-link">
+                    <img src="img/platillo.png" alt="icono-desplegable">
+                    <span class="desplegable-span">Menu</span>
+                    <img src="img/flecha2.png" alt="" class="flecha">
+
+                    <input type="checkbox" class="desplegable-check">
+                </a>
+
+                <div class="contenido-menu">
+                    <ul class="sub-menu">
+                        <li class="menu-li">
+                            <a href="menuPromo.html" class="ancla-menu">Promos</a>
+                        </li>
+                    
+                        <li class="menu-li">
+                            <a href="menuDesayuno.html" class="ancla-menu">Desayuno/Merienda</a>
+                        </li>
+
+                        <li class="menu-li">
+                            <a href="menuAlmuerzo.html" class="ancla-menu">Almuerzo/Cena</a>
+                        </li>
+                        </li>
+                    </ul>
+                </div>
+            </li>
+
+            <li class="lista-desplegable">
+                <a href="#" class="desplegable-link">
+                    <img src="img/reserva.png" alt="icono-desplegable">
+                    <span class="desplegable-span">Reserva</span>
+                </a>
+            </li>
+
+            <li class="lista-desplegable">
+                <a href="#" class="desplegable-link">
+                    <img src="img/quienes-somos.png" alt="icono-desplegable">
+                    <span class="desplegable-span">Quienes Somos?</span>
+                </a>
+            </li>
+
+            <li class="lista-desplegable">
+                <a href="#" class="desplegable-link">
+                    <img src="img/ayuda.png" alt="icono-desplegable">
+                    <span class="desplegable-span">Ayuda</span>
+                </a>
+            </li>
+        </ul>
     </div>
-        <div class="caja-titulo">
-            <p id="titulo">Restaurant</p>
-        </div>
 </header>
 <body>
     <div class="fondo">
@@ -128,12 +188,23 @@ include "conexionsql.php";
         </div>
     </div>
 </body>
-    <footer>
+<footer>
+    <div class="derechos">
+        <p id="derechos">Copyright © 2023 IPETyM 246. All rights reserved.</p>
+    </div>
+
+    <div class="link">
         <ul>
-            <li><a href="@">Inicio</a></li>
+            <li><a href="index.html">Inicio</a></li>
             <li><a href="QuienesSomos.html">Quienes Somos?</a></li>
-            <li><a href="ListaPrecio.html">Lista De Precios</a></li>
+            <div class="caja-footer">
+                <p>MENU</p>
+                <li class="sub-footer"><a href="menuDesayuno.html">Desayuno/Merienda</a></li>
+                <li class="sub-footer"><a href="#">Almuerzo/Cena</a></li>
+                <li class="sub-footer"><a href="menuPromo.html">Promos</a></li>
+            </div>
             <li><a href="Reserva.html">Reservas</a></li>
         </ul>
-    </footer>
+    </div>
+</footer>
 </html>
