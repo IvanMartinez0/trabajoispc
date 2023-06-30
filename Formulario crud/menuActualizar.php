@@ -3,13 +3,17 @@ include("conexionsql.php");
  
 $buscar = $_POST['buscar'];
 
-$sql = "SELECT reserva.id_res, reserva.nombre_res, reserva.apellido_res, reserva.dni_res, reserva.tel_res, reserva.mesa_res, horario.hora, reserva.fecha_res FROM reserva JOIN horario ON reserva.id_res = horario.id_hora WHERE dni_res like '$buscar%'";
+$sql = "SELECT reserva.id_res, reserva.nombre_res, reserva.apellido_res, reserva.dni_res, reserva.tel_res, mesa.capacidad_mesa, horario.hora, reserva.fecha_res 
+        FROM reserva 
+        JOIN horario ON reserva.id_res = horario.id_hora 
+        JOIN mesa ON reserva.id_res = mesa.id_mesa 
+        WHERE reserva.dni_res LIKE '$buscar%'";
+
 $query = mysqli_query($conexion, $sql);
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -17,14 +21,11 @@ $query = mysqli_query($conexion, $sql);
     <link href="CSS/style.css" rel="stylesheet">
     <title>Listas de reservas</title>
 </head>
-
 <body>
-
     <h2>Reservas registradas</h2>
     <table>
         <thead>
             <tr>
-
                 <th>Nombre</th>
                 <th>Apellido</th>
                 <th>DNI</th>
@@ -40,12 +41,11 @@ $query = mysqli_query($conexion, $sql);
         <tbody>
             <?php while ($row = mysqli_fetch_array($query)): ?>
                 <tr>
-
                     <th><?= $row['nombre_res'] ?></th>
                     <th><?= $row['apellido_res'] ?></th>
                     <th><?= $row['dni_res'] ?></th>
                     <th><?= $row['tel_res'] ?></th>
-                    <th><?= $row['mesa_res'] ?></th>
+                    <th><?= $row['capacidad_mesa'] ?></th>
                     <th><?= $row['hora'] ?></th>
                     <th><?= $row['fecha_res'] ?></th>
                     <th><a href="actualizarReserva.php?id_res=<?= $row['id_res'] ?>" class="users-table--edit">Editar</a></th>
@@ -55,7 +55,5 @@ $query = mysqli_query($conexion, $sql);
         </tbody>
     </table>
 </body>
-
 </html>
 
-</html>
