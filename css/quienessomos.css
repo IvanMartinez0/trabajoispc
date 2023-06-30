@@ -1,0 +1,40 @@
+.body{
+    margin: 20px;
+    padding: 20px;
+    border: 0;
+    font-size: 100;
+    vertical-align: baseline;
+    overflow: visible;
+    background:rgb(251, 251, 251);
+    
+}
+body{
+    height: 100vh !important;
+    background: url(fondorestaurante.jpg);
+    background-attachment: fixed;
+    background-size: center;
+    background-position: center ;
+    text-align: center;
+}
+.titulo{
+    border-radius: 1rem;
+    text-align: center;
+    height: 60px;
+    color:black;
+    font-size: 35px;
+}
+.subtitulo{
+    color: black;
+    border-radius: 1rem;
+    font-size: 50px;
+    font-family: "Arial", sans-serif;
+    text-align: left;
+}
+.contenido{
+    color: black;
+    background-color: gainsboro;
+    border-radius: 1rem;
+    font-size: 25px;
+    font-family: "Arial", sans-serif;
+    text-align: left;
+}
