@@ -1,7 +1,7 @@
 
 CREATE TABLE `mesa` ( /*creacion de la tabla mesa*/
   `id_mesa` int(11) primary key NOT NULL AUTO_INCREMENT,
-  `capacidad_mesa` varchar(50) NOT NULL,
+  `capacidad_mesa` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish_ci; /*definicion del lenguaje de la tabla*/
 
 INSERT INTO `mesa` (`id_mesa`, `capacidad_mesa`) VALUES /* llenado de los campos */
