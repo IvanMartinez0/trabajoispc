@@ -72,7 +72,14 @@ CREATE TABLE `reserva` ( /*creacion de la tabla reserva*/
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish_ci; /*definicion del lenguaje*/
 
 INSERT INTO `reserva` (`id_res`,`nombre_res`, `apellido_res`, `dni_res`,`tel_res`,`fecha_res`,`hora_res`,`mesa_res`) VALUES /*llenado de datos*/
-(1,'Ivan Alejandro', 'Martinez','45932126','3515739074','2023/07/30','3','4');
+(1,'Ivan Alejandro', 'Martinez','45816234','3515749074','2023/07/30','3','4'),
+(2,'Dante Sebastian', 'Juarez','46321234','3512161814','2023/07/25','1','5'),
+(3,'Manuel', 'Moreno','46233432','3517722174','2023/08/01','3','4'),
+(4,'Joaquin', 'Ferreyra','461932143','3519983211','2023/07/16','2','1'),
+(5,'Braian Sebastian', 'Valles','45943321','3512345677','2023/07/24','2','4'),
+(6,'Lucas Martin', 'Perez','46243192','3514324524','2023/07/25','4','1'),
+(7,'Agustin Natanael', 'Romero','4594432143','3514431134','2023/07/27','3','2'),
+(8,'Lucia Rubi ', 'Solis ','454231332','352431382','2023/07/25','3','3');
 
 CREATE TABLE `restaurante` ( /*creacion de la tabla restaurante*/
   `id_rest` int(11) primary key NOT NULL AUTO_INCREMENT,
