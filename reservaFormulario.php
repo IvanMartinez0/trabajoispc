@@ -12,72 +12,12 @@ include "conexionsql.php";
     <title>Document</title>
 </head>
 <header>
-    <div class="contenedor">
-        <h id="titulo">Restaurant</h>
-        <a href="#menu" class="nav_menu">
-            <img src="img/menu.svg" class="icono">
-        </a>
-        <a href="#" class="nav_menu nav_menu--segundo">
-            <img src="img/cerrar.svg" class="icono">
-        </a>
-
-        <ul class="menu_desplegable" id="menu">
-            <li class="lista-desplegable">
-                <a href="index.html" class="desplegable-link">
-                    <img src="img/home.svg" alt="icono-desplegable">
-                    <span class="desplegable-span">Inicio</span>
-                </a>
-            </li>
-
-            <li class="lista-desplegable">
-                <a href="#" class="desplegable-link">
-                    <img src="img/platillo.png" alt="icono-desplegable">
-                    <span class="desplegable-span">Menu</span>
-                    <img src="img/flecha2.png" alt="" class="flecha">
-
-                    <input type="checkbox" class="desplegable-check">
-                </a>
-
-                <div class="contenido-menu">
-                    <ul class="sub-menu">
-                        <li class="menu-li">
-                            <a href="menuPromo.html" class="ancla-menu">Promos</a>
-                        </li>
-                    
-                        <li class="menu-li">
-                            <a href="menuDesayuno.html" class="ancla-menu">Desayuno/Merienda</a>
-                        </li>
-
-                        <li class="menu-li">
-                            <a href="menuAlmuerzo.html" class="ancla-menu">Almuerzo/Cena</a>
-                        </li>
-                        </li>
-                    </ul>
-                </div>
-            </li>
-
-            <li class="lista-desplegable">
-                <a href="#" class="desplegable-link">
-                    <img src="img/reserva.png" alt="icono-desplegable">
-                    <span class="desplegable-span">Reserva</span>
-                </a>
-            </li>
-
-            <li class="lista-desplegable">
-                <a href="#" class="desplegable-link">
-                    <img src="img/quienes-somos.png" alt="icono-desplegable">
-                    <span class="desplegable-span">Quienes Somos?</span>
-                </a>
-            </li>
-
-            <li class="lista-desplegable">
-                <a href="#" class="desplegable-link">
-                    <img src="img/ayuda.png" alt="icono-desplegable">
-                    <span class="desplegable-span">Ayuda</span>
-                </a>
-            </li>
-        </ul>
+    <div class="caja-menu">
+        <p>...</p>
     </div>
+        <div class="caja-titulo">
+            <p id="titulo">Restaurant</p>
+        </div>
 </header>
 <body>
     <div class="fondo">
@@ -85,28 +25,36 @@ include "conexionsql.php";
     <div class="caja-formulario">
         <div class="subCaja-formularios">
             <div class="formulario">
-                <form action="#">
+
+                <form action="prueba1.php" method="post">
+
                     <div class="grupo">
                         <input type="text" name="nombre" id="name" required><span class="barra"></span>
                         <label for="">Nombre</label>
                     </div>   
+
                     <div class="grupo">
                         <input type="text" name="apellido" id="name" required><span class="barra"></span>
                         <label for="">Apellido</label>
                     </div>
+
                     <div class="grupo">
                         <input type="number" name="telefono" id="name" required><span class="barra"></span>
                         <label for="">Telefono</label>
                     </div>
+
                     <div class="grupo">
                         <input type="number" name="dni" id="name" required><span class="barra"></span>
                         <label for="">D.N.I</label>
                     </div>
+
                     <div class="grupo">
                         <input type="date" name="fechas" id="name" required><span class="barra"></span>
                         <label for="">Fecha a asistir</label>
                     </div>
+
                     <div class="grupo">
+
                         <label>Horarios disponibles</label>
                         <select name="horarios">
         
@@ -138,13 +86,15 @@ include "conexionsql.php";
         
                         </select>
                     </div>
+
                     <div class="grupo">
+
                     <label>Mesas disponibles para:</label>
 				<select name="mesas">
 
 				<?php
 						
-						$query="SELECT * FROM mesas order by 2";
+						$query="SELECT * FROM mesa order by 2";
 					
 						$resultado=mysqli_query($conexion,$query);
 
@@ -168,32 +118,22 @@ include "conexionsql.php";
 							}
 					?>
                     </div>
+
+                     <div class="botones">
+            <input type="submit" name="Enviar">
+                    </div>
 				</select>
                 </form>
             </div>
         </div>
-        <div class="botones" type="submit">
-            <button>enviar</button>
-        </div>
     </div>
 </body>
-<footer>
-    <div class="derechos">
-        <p id="derechos">Copyright © 2023 IPETyM 246. All rights reserved.</p>
-    </div>
-
-    <div class="link">
+    <footer>
         <ul>
-            <li><a href="index.html">Inicio</a></li>
+            <li><a href="@">Inicio</a></li>
             <li><a href="QuienesSomos.html">Quienes Somos?</a></li>
-            <div class="caja-footer">
-                <p>MENU</p>
-                <li class="sub-footer"><a href="menuDesayuno.html">Desayuno/Merienda</a></li>
-                <li class="sub-footer"><a href="menuAlmuerzo.html">Almuerzo/Cena</a></li>
-                <li class="sub-footer"><a href="menuPromo.html">Promos</a></li>
-            </div>
-            <li><a href="#">Reservas</a></li>
+            <li><a href="ListaPrecio.html">Lista De Precios</a></li>
+            <li><a href="Reserva.html">Reservas</a></li>
         </ul>
-    </div>
-</footer>
+    </footer>
 </html>
