@@ -236,3 +236,7 @@ footer a, p{
     margin-left: -40px;
 }
 
+.Direccion{
+    text-decoration: none;
+    color: #000000;
+}

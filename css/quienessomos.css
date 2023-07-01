@@ -250,3 +250,8 @@ footer a, p{
     margin-top:2px;
     margin-left: -40px;
 }
+
+.Direccion{
+    text-decoration: none;
+    color: #000000;
+}
