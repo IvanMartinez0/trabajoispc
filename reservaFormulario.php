@@ -64,7 +64,7 @@ include "conexionsql.php";
             </li>
 
             <li class="lista-desplegable">
-                <a href="#" class="desplegable-link">
+                <a href="quienesSomos.html" class="desplegable-link">
                     <img src="img/quienes-somos.png" alt="icono-desplegable">
                     <span class="desplegable-span">Quienes Somos?</span>
                 </a>
@@ -86,7 +86,7 @@ include "conexionsql.php";
         <div class="subCaja-formularios">
             <div class="formulario">
 
-                <form action="prueba1.php" method="post">
+                <form action="reservas.php" method="post">
 
                     <div class="grupo">
                         <input type="text" name="nombre" id="name" required><span class="barra"></span>
