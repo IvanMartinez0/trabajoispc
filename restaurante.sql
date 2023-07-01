@@ -70,7 +70,10 @@ CREATE TABLE `promo` ( /*creacion de la tabla promo*/
 
 INSERT INTO `promo` (`id_promo`,`nombre_promo`, `descrip_promo`, `precio_promo`) VALUES /*llenado de datos*/
 (1,'desayuno', 'cafe mediano + 2 criollos + una factura', '780 pesos'),
-(2,'almuerzo', 'milanesa de carne + papas hervidas + gaseosa a eleccion', '2400 pesos');
+(2,'almuerzo', 'milanesa de carne + papas hervidas + gaseosa a eleccion', '2400 pesos'),
+(3,'Postre 2 helados','Sabores a eleccion','250 pesos'),
+(4,'Pizza 4 quesos + gaseosa','Salsa de tomate y una mezcla de quesos, como mozzarella, queso azul, queso de cabra, y queso parmesano','1400 pesos'),
+(5,'Hamburguesa simple + bebida','Opciones de bebidas: Manaos, Cocacola, Pepsi, Doble cola de naranja','1900 pesos');
 
 CREATE TABLE `reserva` ( /*creacion de la tabla reserva*/
   `id_res` int(11) primary key NOT NULL AUTO_INCREMENT,
