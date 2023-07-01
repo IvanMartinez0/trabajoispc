@@ -18,7 +18,7 @@ $query = mysqli_query($conexion, $sql);
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="../css/style.css" rel="stylesheet">
+    <link href="../css/menu2.css" rel="stylesheet">
     <title>Listas de reservas</title>
 </head>
 <header>
@@ -93,8 +93,6 @@ $query = mysqli_query($conexion, $sql);
     <div class="fondo">
     </div>
     <div class="contenido">
-
-    </div>
     <h2>Reservas registradas</h2>
     <table>
         <thead>
@@ -127,6 +125,26 @@ $query = mysqli_query($conexion, $sql);
             <?php endwhile; ?>
         </tbody>
     </table>
+    </div>
 </body>
+        <footer>
+            <div class="derechos">
+                <p id="derechos">Copyright © 2023 IPETyM 246. All rights reserved.</p>
+            </div>
+        
+            <div class="link">
+                <ul>
+                    <li><a href="#">Inicio</a></li>
+                    <li><a href="QuienesSomos.html">Quienes Somos?</a></li>
+                    <div class="caja-footer">
+                        <p>MENU</p>
+                        <li class="sub-footer"><a href="menuDesayuno.html">Desayuno/Merienda</a></li>
+                        <li class="sub-footer"><a href="menuAlmuerzo.html">Almuerzo/Cena</a></li>
+                        <li class="sub-footer"><a href="menuPromo.html">Promos</a></li>
+                    </div>
+                    <li><a href="reservaFormulario.php">Reservas</a></li>
+                </ul>
+            </div>
+        </footer> 
 </html>
 
