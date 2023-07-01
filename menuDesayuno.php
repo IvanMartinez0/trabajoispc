@@ -9,7 +9,9 @@
 </head>
 <header>
     <div class="contenedor">
+        <a href="index.html" class="Direccion">
         <h id="titulo">Parrilla de papá Seba</h>
+        </a>
         <a href="#menu" class="nav_menu">
             <img src="img/menu.svg" class="icono">
         </a>
@@ -82,14 +84,17 @@
             <img src="img/cartelera2.jpg" alt="" class="foto">
         </div>
         <div class="cajaP">
-            <ul>
-                <li>precio1</li>
-                <li>precio2</li>
-                <li>precio3</li>
-                <li>precio4</li>
-                <li>precio5</li>
-                <li>precio6</li>
-            </ul>
+            <?php 
+    include "conexionsql.php";
+    $sql = "SELECT * FROM producto";
+    $query = mysqli_query($conexion, $sql);
+    while ($row = mysqli_fetch_array($query)): 
+    ?>
+    <ul>
+        <li><?= $row['nombre_prod'] ?></li> 
+        <?= $row['descrip_prod'] ?>
+    </ul>
+    <?php endwhile; // Se quita el cierre de la llave extra y se añade "endwhile" ?>
         </div>
     </div>
 </body>

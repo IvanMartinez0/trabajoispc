@@ -9,7 +9,9 @@
 </head>
 <header>
     <div class="contenedor">
-        <h id="titulo">Restaurant</h>
+    <a href="index.html" class="Direccion">
+        <h id="titulo">Parrilla de papá Seba</h>
+        </a>
         <a href="#menu" class="nav_menu">
             <img src="img/menu.svg" class="icono">
         </a>
@@ -86,7 +88,7 @@
     include "conexionsql.php";
     $sql = "SELECT * FROM producto";
     $query = mysqli_query($conexion, $sql);
-    while ($row = mysqli_fetch_array($query)): // Se añade ":" después del "while"
+    while ($row = mysqli_fetch_array($query)): 
     ?>
     <ul>
         <li><?= $row['nombre_prod'] ?></li> 

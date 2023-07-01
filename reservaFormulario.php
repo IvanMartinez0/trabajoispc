@@ -13,7 +13,9 @@ include "conexionsql.php";
 </head>
 <header>
     <div class="contenedor">
+    <a href="index.html" class="Direccion">
         <h id="titulo">Parrilla de papá Seba</h>
+</a>
         <a href="#menu" class="nav_menu">
             <img src="img/menu.svg" class="icono">
         </a>

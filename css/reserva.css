@@ -357,3 +357,8 @@ select{
     font-size: 16px;
     cursor: pointer;
 }
+
+.Direccion{
+    text-decoration: none;
+    color: #000000;
+}
