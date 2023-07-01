@@ -39,7 +39,8 @@ header:has(.menu_desplegable:target){
     font-size: 55px;
     text-align: center;
     grid-area: title;
-    margin-right: 500px;
+    margin-right: 380px;
+    color: black;
 }
 
 .nav_menu{
@@ -156,7 +157,7 @@ header:has(.menu_desplegable:target){
 }
 body{
     height: 100vh !important;
-    background: url(../img/fondo2.jpeg);
+    background: url(../img/fondo3.jpg);
     background-attachment: fixed;
     background-size: center;
     background-position: center ;
@@ -236,7 +237,7 @@ footer ul li{
 
 footer a, p{
     
-    color:white;
+    color:black;
     text-decoration: none;
 }
 

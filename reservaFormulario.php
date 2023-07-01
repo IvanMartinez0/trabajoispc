@@ -9,11 +9,11 @@ include "conexionsql.php";
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/reserva.css">
     <link rel="icon" href="icono.png">
-    <title>Document</title>
+    <title>Reserva</title>
 </head>
 <header>
     <div class="contenedor">
-        <h id="titulo">Restaurant</h>
+        <h id="titulo">Parrilla de papá Seba</h>
         <a href="#menu" class="nav_menu">
             <img src="img/menu.svg" class="icono">
         </a>

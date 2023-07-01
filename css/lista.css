@@ -38,7 +38,7 @@ header:has(.menu_desplegable:target){
     font-size: 55px;
     text-align: center;
     grid-area: title;
-    margin-right: 500px;
+    margin-right: 380px;
 }
 
 .nav_menu{
